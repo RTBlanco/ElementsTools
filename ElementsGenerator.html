@@ -416,7 +416,7 @@
         function GenerateAppointmentNotes() {
             var outputString = "";
 
-            var memType = document.querySelector('input[name="member-type"]:checked');
+            var memType = document.querySelector('input[name="an-member-type"]:checked');
             if(memType != null && memType.value != "null"){
                 outputString += `${memType.value}\n`;
             }
