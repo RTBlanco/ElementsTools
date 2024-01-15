@@ -35,6 +35,7 @@
         .bg-grey {
             background-color: #CCC;
         }
+        
         .bg-red {
             background-color: #F88;
         }
@@ -117,32 +118,6 @@
                 </div>
             </div>
             <div>
-                <div class="bg-grey col-2 padding-10 margin-1 roudned">
-                    <label>Yes</label><br/>
-                    <input type="checkbox" class="yes" name="All" /> <span>All</span><br/>
-                    <input type="checkbox" class="yes" name="Scalp" /> <span>Scalp</span><br/>
-                    <input type="checkbox" class="yes" name="Pecs" /> <span>Pecs</span><br/>
-                    <input type="checkbox" class="yes" name="Abs" /> <span>Abs</span><br/>
-                    <input type="checkbox" class="yes" name="Glutes" /> <span>Glutes</span><br/>
-                    <input type="checkbox" class="yes" name="Feet" /> <span>Feet</span><br/>
-                </div>
-                <div class="bg-grey col-2 padding-10 margin-1 roudned">
-                    <label>No</label><br/>
-                    <input type="checkbox" class="no" name="All" /> <span>All</span><br/>
-                    <input type="checkbox" class="no" name="Scalp" /> <span>Scalp</span><br/>
-                    <input type="checkbox" class="no" name="Pecs" /> <span>Pecs</span><br/>
-                    <input type="checkbox" class="no" name="Abs" /> <span>Abs</span><br/>
-                    <input type="checkbox" class="no" name="Glutes" /> <span>Glutes</span><br/>
-                    <input type="checkbox" class="no" name="Feet" /> <span>Feet</span><br/>
-                </div>
-            </div>
-            <div>
-                <div class="bg-grey full-width padding-10 margin-1 roudned">
-                    <label>Occupation</label>
-                    <input id="red-alert-occupation" class="input-field"/>
-                </div>
-            </div>
-            <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
                     <div>
                         <label>Health History:</label>
@@ -164,8 +139,13 @@
                     <hr/>
                     <input class="hh" type="checkbox" name="Contact Lenses" /> <span>Contact Lenses</span><br/>
                     <input class="hh" type="checkbox" name="Jaw Clenching/Teeth Grinding" /> <span>Jaw Clenching/Teeth Grinding</span><br/>
-                    <input class="hh" type="checkbox" name="Numbniess/Tingling" /> <span>Numbniess/Tingling</span><br/>
-                    <span>Location:</span><input type="text" /><br/>
+                    <span>Numbness/Tingling Location:</span><input id="hh-numbness" type="text" /><br/>
+                </div>
+            </div>
+            <div>
+                <div class="bg-grey full-width padding-10 margin-1 roudned">
+                    <label>Occupation</label>
+                    <input id="red-alert-occupation" class="input-field" />
                 </div>
             </div>
             <div>
@@ -186,7 +166,26 @@
                     <textarea id="injuries" style="width: 300px; height: 50px;"></textarea>
                 </div>
             </div>
-
+            <div>
+                <div class="bg-grey col-2 padding-10 margin-1 roudned">
+                    <label>Yes</label><br/>
+                    <input type="checkbox" class="yes" name="All" /> <span>All</span><br/>
+                    <input type="checkbox" class="yes" name="Scalp" /> <span>Scalp</span><br/>
+                    <input type="checkbox" class="yes" name="Pecs" /> <span>Pecs</span><br/>
+                    <input type="checkbox" class="yes" name="Abs" /> <span>Abs</span><br/>
+                    <input type="checkbox" class="yes" name="Glutes" /> <span>Glutes</span><br/>
+                    <input type="checkbox" class="yes" name="Feet" /> <span>Feet</span><br/>
+                </div>
+                <div class="bg-grey col-2 padding-10 margin-1 roudned">
+                    <label>No</label><br/>
+                    <input type="checkbox" class="no" name="All" /> <span>All</span><br/>
+                    <input type="checkbox" class="no" name="Scalp" /> <span>Scalp</span><br/>
+                    <input type="checkbox" class="no" name="Pecs" /> <span>Pecs</span><br/>
+                    <input type="checkbox" class="no" name="Abs" /> <span>Abs</span><br/>
+                    <input type="checkbox" class="no" name="Glutes" /> <span>Glutes</span><br/>
+                    <input type="checkbox" class="no" name="Feet" /> <span>Feet</span><br/>
+                </div>
+            </div>
             <div>
                 <div class="bg-grey full-width padding-10 margin-1 roudned">
                     <div>
@@ -260,7 +259,6 @@
                     <input type="checkbox" class="reason" name="Sports Injury" /> <span>Sports Injury</span><br/>
                     <input type="checkbox" class="reason" name="Prevention" /> <span>Prevention</span><br/>
                     <input type="checkbox" class="reason" name="Muscle Knots" /> <span>Muscle Knots</span><br/>
-                    <input type="checkbox" class="reason" name="Annually" /> <span>Other</span><br/>
                     <label>Other:</label>
                     <input id="knowetm-reason-other-detail" class="input-field" />
                 </div>
@@ -274,7 +272,7 @@
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
                     <label>On a scale of 1-10 what is your current level of pain?</label><br/>
-                    <input type="radio" class="pain-level" name="pain-level" value="null"/> <span>N/A</span>
+                    <input type="radio" class="pain-level" name="pain-level" value="null" /> <span>N/A</span>
                     <input type="radio" class="pain-level" name="pain-level" value="1" /> <span>1 (least)</span>
                     <input type="radio" class="pain-level" name="pain-level" value="2" /> <span>2</span>
                     <input type="radio" class="pain-level" name="pain-level" value="3" /> <span>3</spa>
@@ -290,7 +288,7 @@
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
                     <label>On a scale of 1-10 what is your current level of stress?</label><br/>
-                    <input type="radio" class="stress-level" name="stress-level" value="null"/> <span>N/A</span>
+                    <input type="radio" class="stress-level" name="stress-level" value="null" /> <span>N/A</span>
                     <input type="radio" class="stress-level" name="stress-level" value="1" /> <span>1 (least)</span>
                     <input type="radio" class="stress-level" name="stress-level" value="2" /> <span>2</span>
                     <input type="radio" class="stress-level" name="stress-level" value="3" /> <span>3</spa>
@@ -334,9 +332,9 @@
             <div class="flex">
                 <div class="bg-grey padding-10 margin-1 roudned">
                     <label>What's the state of the intake?</label><br/>
-                    <input type="radio" class="recent-intake" name="recent-intake" value="Current"/> <span>Current</span><br/>
-                    <input type="radio" class="recent-intake" name="recent-intake" value="Needs"/> <span>Needs Updating</span><br/>
-                    <input type="radio" class="recent-intake" name="recent-intake" value="Sent"/> <span>Sent</span><br/>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="Current" /> <span>Current</span><br/>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="Needs" /> <span>Needs Updating</span><br/>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="Sent" /> <span>Sent</span><br/>
                 </div>
             </div>
             <div class="flex">
@@ -417,54 +415,52 @@
             var outputString = "";
 
             var memType = document.querySelector('input[name="an-member-type"]:checked');
-            if(memType != null && memType.value != "null"){
+            if (memType != null && memType.value != "null") {
                 outputString += `${memType.value}\n`;
             }
 
             var intakeState = document.querySelector('input[name="recent-intake"]:checked');
-            if(intakeState != null && intakeState.value != "null"){
+            if (intakeState != null && intakeState.value != "null") {
                 outputString += `Intake: ${intakeState.value}\n`;
             }
 
             var paymentType = document.querySelector('input[name="an-payment-opt"]:checked');
-            if(paymentType != null && paymentType.value != "null"){
+            if (paymentType != null && paymentType.value != "null") {
                 var bankedSessionCount = document.querySelector('input[name="banked-session-count"]');
                 if (paymentType.value == "banked") {
                     outputString += `${paymentType.value}: ${bankedSessionCount.value} \n`;
-                }
-                else
-                {
+                } else {
                     outputString += `${paymentType.value}\n`;
                 }
             }
-            
-            var lastSeen = document.querySelector('input[name="an-last-seen-date"]');
+
+            var lastSeen = document.querySelector('input[name="an-last-seen-date"]').valueAsDate;
             var lastSeenTherapist = document.querySelector('input[name="an-last-seen-therapist"]');
-            if(lastSeen != null && lastSeen.value != "null"){
-                if(lastSeenTherapist != null && lastSeenTherapist.value != "")
-                {
-                    outputString += `LS: ${lastSeen.value} MT: ${lastSeenTherapist.value}\n`;
-                }
-                else
-                {
-                    outputString += `LS: ${lastSeen.value}\n`;
+            if (lastSeen != null && lastSeen.value != "null") {
+                var lastSeenMonth = `${lastSeen.getUTCMonth() + 1}`.padStart(2, "0");
+                var lastSeenDay = `${lastSeen.getUTCDate()}`.padStart(2, "0");
+                var lastSeenYear = `${lastSeen.getUTCFullYear()}`;
+                var lastSeenDateString = `${lastSeenMonth}/${lastSeenDay}/${lastSeenYear}`
+                if (lastSeenTherapist != null && lastSeenTherapist.value != "") {
+                    outputString += `LS: ${lastSeenDateString} MT: ${lastSeenTherapist.value}\n`;
+                } else {
+                    outputString += `LS: ${lastSeenDateString}\n`;
                 }
             }
 
-            var nextSeen = document.querySelector('input[name="an-next-appointment-date"]');
+            var nextSeen = document.querySelector('input[name="an-next-appointment-date"]').valueAsDate;
             var nextSeenTherapist = document.querySelector('input[name="an-next-appointment-therapist"]');
-            if(nextSeen != null && nextSeen.value != "" && nextSeen.value != "null"){
-                if(nextSeenTherapist != null && nextSeenTherapist.value != "")
-                {
-                    outputString += `NS: ${nextSeen.value} MT: ${nextSeenTherapist.value}\n`;
+            if (nextSeen != null && nextSeen.value != "" && nextSeen.value != "null") {
+                var nextSeenMonth = `${(nextSeen.getUTCMonth() + 1)}`.padStart(2, "0");
+                var nextSeenDay = `${nextSeen.getUTCDate()}`.padStart(2, "0");
+                var nextSeenYear = `${nextSeen.getUTCFullYear()}`;
+                var nextSeenDateString = `${nextSeenMonth}/${nextSeenDay}/${nextSeenYear}`
+                if (nextSeenTherapist != null && nextSeenTherapist.value != "") {
+                    outputString += `NS: ${nextSeenDateString} MT: ${nextSeenTherapist.value}\n`;
+                } else {
+                    outputString += `NS: ${nextSeenDateString}\n`;
                 }
-                else
-                {
-                    outputString += `NS: ${nextSeen.value}\n`;
-                }
-            }
-            else
-            {
+            } else {
                 outputString += `NS: None Scheduled\n`;
             }
 
@@ -475,26 +471,20 @@
 
             var enhancement = document.querySelector('input[name="an-enh"]:checked');
             var enhancementChoice = document.querySelector('input[name="an-enh-field"]');
-            if(enhancement != null && enhancement.value != "null"){
-                if(enhancementChoice != null && enhancementChoice.value != "")
-                {
+            if (enhancement != null && enhancement.value != "null") {
+                if (enhancementChoice != null && enhancementChoice.value != "") {
                     outputString += `${enhancement.value} : ${enhancementChoice.value}\n`;
-                }
-                else
-                {
+                } else {
                     outputString += `${enhancement.value}\n`;
                 }
             }
 
             var confirmation = document.querySelector('input[name="an-confirm"]:checked');
             var confirmationField = document.querySelector('input[name="an-confirm-field"]');
-            if(confirmation != null && confirmation.value != "null"){
-                if(confirmationField != null && confirmationField.value != "")
-                {
+            if (confirmation != null && confirmation.value != "null") {
+                if (confirmationField != null && confirmationField.value != "") {
                     outputString += `${confirmation.value} : ${confirmationField.value}\n`;
-                }
-                else
-                {
+                } else {
                     outputString += `${confirmation.value}\n`;
                 }
             }
@@ -507,7 +497,11 @@
             //CIF
             //*****************
             var knowetmDate = document.getElementById("knowetm-date").valueAsDate;
-            var outputString = `Completed Date:  ${knowetmDate.getMonth() + 1}/${knowetmDate.getDate() + 1}/${knowetmDate.getFullYear()}\n`;
+
+            var knowetmDateMonth = `${(knowetmDate.getUTCMonth() + 1)}`.padStart(2, "0");
+            var knowetmDateDay = `${knowetmDate.getUTCDate()}`.padStart(2, "0");
+            var knowetmDateYear = `${knowetmDate.getUTCFullYear()}`;
+            var outputString = `Completed Date:  ${knowetmDateMonth}/${knowetmDateDay}/${knowetmDateYear}\n`;
             console.log();
             //*****************
             //name
@@ -521,7 +515,7 @@
             //occupation
             //*****************
             var knowetmOccupation = document.getElementById("knowetm-occupation");
-            if (knowetmOccupation.value != "") {
+            if (typeof knowetmOccupation === "string" && knowetmOccupation.length === 0) {
                 outputString += `Occupation: ${document.getElementById("knowetm-occupation").value}\n`;
             }
 
@@ -591,6 +585,10 @@
                 outputString += `Reasons for coming in: ${knowetmReasons}\n`;
             }
 
+            var reasonStringOutput = document.getElementById("knowetm-reason-other-detail").value;
+            if (typeof reasonStringOutput === "string" && reasonStringOutput.length > 0) {
+                outputString += `Other Reason For Coming in: ${reasonStringOutput}`;
+            }
 
             //*****************
             //activities
@@ -603,11 +601,11 @@
             //level
             //*****************
             var painLevel = document.querySelector('input[name="pain-level"]:checked');
-            if(painLevel != null && painLevel.value != "null"){
+            if (painLevel != null && painLevel.value != "null") {
                 outputString += `Pain Level: ${painLevel.value}/${document.getElementsByName("pain-level").length}\n`;
             }
             var stressLevel = document.querySelector('input[name="stress-level"]:checked');
-            if(stressLevel != null && stressLevel.value != "null"){
+            if (stressLevel != null && stressLevel.value != "null") {
                 outputString += `stress Level: ${stressLevel.value}/${document.getElementsByName("stress-level").length}\n`;
             }
             //*****************
@@ -634,7 +632,8 @@
             //CIF
             //*****************
             var redAlertDate = document.getElementById("red-alert-date").valueAsDate;
-            var outputString = `CIF ${redAlertDate.getMonth() + 1}/${redAlertDate.getDate() + 1}/${redAlertDate.getFullYear()}\n`;
+            var redAlertMonth = `${(redAlertDate.getUTCMonth() + 1)}`.padStart(2, "0");
+            var outputString = `CIF ${redAlertMonth}/${redAlertDate.getUTCDate()}/${redAlertDate.getUTCFullYear()}\n`;
             console.log();
 
             //*****************
@@ -678,44 +677,66 @@
             //*****************
             //Occupation
             //*****************
-            outputString += `Occupation: ${document.getElementById("red-alert-occupation").value}\n`;
+            var occupation = document.getElementById("red-alert-occupation").value;
+            if (typeof hhOutput === "string" && hhOutput.length !== 0) {
+                outputString += `Occupation: ${occupation}\n`;
+            }
             //*****************
             //HH
             //*****************
             var healthHistoryElements = document.getElementsByClassName("hh");
             var hhOutput = "";
+            var first = true;
             for (let index = 0; index < healthHistoryElements.length; index++) {
                 const element = healthHistoryElements.item(index);
-
                 var name = element.getAttribute("name");
                 if (element.checked) {
-                    if (index == 0) {
+                    if (first) {
+                        first = false;
                         hhOutput += `${element.getAttribute("name")}`;
                     } else {
-                        hhOutput += `, ${element.getAttribute("name")}`;
+                        hhOutput += `${element.getAttribute("name")}`;
                     }
                 }
             }
-            outputString += `HH: ${hhOutput}\n\n`;
-            outputString += `Medical Conditions: ${document.getElementById("medical-conditions").value}\n`;
-            outputString += `Medications: ${document.getElementById("medications").value}\n`;
-            outputString += `Injuries: ${document.getElementById("injuries").value}\n`;
+            if (typeof hhOutput === "string" && hhOutput.length > 0) {
+                outputString += `HH: ${hhOutput}\n\n`;
+            }
+
+            var numbnessOutput = document.getElementById("hh-numbness").value;
+            if (typeof numbnessOutput === "string" && numbnessOutput.length > 0) {
+                outputString += `Numbness/Tingling Location: ${numbnessOutput}\n\n`;
+            }
+
+
+            var medicalConditionsOutput = document.getElementById("medical-conditions").value;
+            if (typeof medicalConditionsOutput === "string" && medicalConditionsOutput.length > 0) {
+                outputString += `Medical Conditions: ${medicalConditionsOutput}\n`;
+            }
+            var medicationsOutput = document.getElementById("medications").value;
+            if (typeof medicationsOutput === "string" && medicationsOutput.length > 0) {
+                outputString += `Medications: ${medicationsOutput}\n`;
+            }
+            var injuriesOutput = document.getElementById("injuries").value;
+            if (typeof injuriesOutput === "string" && injuriesOutput.length > 0) {
+                outputString += `Injuries: ${injuriesOutput}\n`;
+            }
 
             document.getElementById("red-alert-output").value = outputString;
         }
 
         function ClearAppointmentNotes() {
-location.reload();
+            location.reload();
             document.getElementById("appointment-notes-output").value = "";
         }
 
         function ClearKNOWETM() {
-location.reload();
+            location.reload();
             document.getElementById("knowetm-output").value = "";
         }
 
         function ClearRedAlerts() {
-location.reload();
+            location.reload();
             document.getElementById("red-alert-output").value = "";
         }
 
