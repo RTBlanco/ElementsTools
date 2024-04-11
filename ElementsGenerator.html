@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -103,6 +104,17 @@
             width: 30%;
             background-color: #EEF;
         }
+        table{
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        tr:nth-child(even){background-color: #f2f2f2;}
+        tr:hover {background-color: #ddd;}
     </style>
 </head>
 
@@ -118,72 +130,186 @@
                 </div>
             </div>
             <div>
-                <div class="bg-grey padding-10 margin-1 roudned">
-                    <div>
-                        <label>Health History:</label>
-                    </div>
-                    <input class="hh" type="checkbox" name="Headaches" /> <span>Headaches</span><br/>
-                    <input class="hh" type="checkbox" name="Muscle/Joint pain" /> <span>Muscle/Joint pain</span><br/>
-                    <input class="hh" type="checkbox" name="Stroke/Heart Attack" /> <span>Stroke/Heart Attack</span><br/>
-                    <input class="hh" type="checkbox" name="Blood Clots" /> <span>Blood Clots</span><br/>
-                    <hr/>
-                    <input class="hh" type="checkbox" name="Seizures" /> <span>Seizures</span><br/>
-                    <input class="hh" type="checkbox" name="Bruise Easily" /> <span>Bruise Easily</span><br/>
-                    <input class="hh" type="checkbox" name="High/Low Blood Pressure" /> <span>High/Low Blood Pressure</span><br/>
-                    <input class="hh" type="checkbox" name="Diabetes" /> <span>Diabetes</span><br/>
-                    <hr/>
-                    <input class="hh" type="checkbox" name="Fibromyalgia" /> <span>Fibromyalgia</span><br/>
-                    <input class="hh" type="checkbox" name="Varicose Veins" /> <span>Varicose Veins</span><br/>
-                    <input class="hh" type="checkbox" name="Active Cancer" /> <span>Active Cancer</span><br/>
-                    <input class="hh" type="checkbox" name="Osteoporosis" /> <span>Osteoporosis</span><br/>
-                    <hr/>
-                    <input class="hh" type="checkbox" name="Contact Lenses" /> <span>Contact Lenses</span><br/>
-                    <input class="hh" type="checkbox" name="Jaw Clenching/Teeth Grinding" /> <span>Jaw Clenching/Teeth Grinding</span><br/>
-                    <span>Numbness/Tingling Location:</span><input id="hh-numbness" type="text" /><br/>
-                </div>
-            </div>
-            <div>
                 <div class="bg-grey full-width padding-10 margin-1 roudned">
                     <label>Occupation</label>
                     <input id="red-alert-occupation" class="input-field" />
                 </div>
             </div>
             <div>
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <div>
+                        <label>Current / Past Conditions:</label>
+                    </div>
+                    <input class="hh" type="checkbox" name="Headaches" /> <span>Headaches</span><br>
+                    <input class="hh" type="checkbox" name="Muscle/Joint pain" /> <span>Muscle/Joint pain</span><br>
+                    <input class="hh" type="checkbox" name="Stroke/Heart Attack" /> <span>Stroke/Heart Attack</span><br>
+                    <input class="hh" type="checkbox" name="Blood Clots" /> <span>Blood Clots</span><br>
+                    <hr/>
+                    <input class="hh" type="checkbox" name="Seizures" /> <span>Seizures</span><br>
+                    <input class="hh" type="checkbox" name="Bruise Easily" /> <span>Bruise Easily</span><br>
+                    <input class="hh" type="checkbox" name="High/Low Blood Pressure" /> <span>High/Low Blood Pressure</span><br>
+                    <input class="hh" type="checkbox" name="Diabetes" /> <span>Diabetes</span><br>
+                    <hr/>
+                    <input class="hh" type="checkbox" name="Fibromyalgia" /> <span>Fibromyalgia</span><br>
+                    <input class="hh" type="checkbox" name="Varicose Veins" /> <span>Varicose Veins</span><br>
+                    <input class="hh" type="checkbox" name="Active Cancer" /> <span>Active Cancer</span><br>
+                    <input class="hh" type="checkbox" name="Osteoporosis" /> <span>Osteoporosis</span><br>
+                    <hr/>
+                    <input class="hh" type="checkbox" name="Contact Lenses" /> <span>Contact Lenses</span><br>
+                    <input class="hh" type="checkbox" name="Jaw Clenching/Teeth Grinding" /> <span>Jaw Clenching/Teeth Grinding</span><br>
+                    <span>Numbness/Tingling Location:</span><input id="hh-numbness" type="text" /><br>
+                </div>
+            </div>
+            <div>
                 <div class="bg-grey full-width padding-10 margin-1 roudned">
-                    <label>Medical Conditions:</label><br/>
+                    <label>Other Medical Conditions:</label><br>
                     <textarea id="medical-conditions" style="width: 300px; height: 50px;"></textarea>
                 </div>
             </div>
             <div>
                 <div class="bg-grey full-width padding-10 margin-1 roudned">
-                    <label>Medications:</label><br/>
+                    <label>Current Medications:</label><br>
                     <textarea id="medications" style="width: 300px; height: 50px;"></textarea>
                 </div>
             </div>
             <div>
                 <div class="bg-grey full-width padding-10 margin-1 roudned">
-                    <label>Injuries:</label><br/>
+                    <label>Accidents, injuries and/or surgeries in the last two years:</label><br>
                     <textarea id="injuries" style="width: 300px; height: 50px;"></textarea>
                 </div>
             </div>
             <div>
-                <div class="bg-grey col-2 padding-10 margin-1 roudned">
-                    <label>Yes</label><br/>
-                    <input type="checkbox" class="yes" name="All" /> <span>All</span><br/>
-                    <input type="checkbox" class="yes" name="Scalp" /> <span>Scalp</span><br/>
-                    <input type="checkbox" class="yes" name="Pecs" /> <span>Pecs</span><br/>
-                    <input type="checkbox" class="yes" name="Abs" /> <span>Abs</span><br/>
-                    <input type="checkbox" class="yes" name="Glutes" /> <span>Glutes</span><br/>
-                    <input type="checkbox" class="yes" name="Feet" /> <span>Feet</span><br/>
+                <div class="bg-grey full-width padding-10 margin-1 roudned">
+                    <label>Allergies/Skin Sensitivities:</label><br>
+                    <textarea id="allergies" style="width: 300px; height: 50px;"></textarea>
                 </div>
-                <div class="bg-grey col-2 padding-10 margin-1 roudned">
-                    <label>No</label><br/>
-                    <input type="checkbox" class="no" name="All" /> <span>All</span><br/>
-                    <input type="checkbox" class="no" name="Scalp" /> <span>Scalp</span><br/>
-                    <input type="checkbox" class="no" name="Pecs" /> <span>Pecs</span><br/>
-                    <input type="checkbox" class="no" name="Abs" /> <span>Abs</span><br/>
-                    <input type="checkbox" class="no" name="Glutes" /> <span>Glutes</span><br/>
-                    <input type="checkbox" class="no" name="Feet" /> <span>Feet</span><br/>
+            </div>
+            <div>
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <label>Pregnant:</label><br>
+                    <input type="radio" class="red-alert-pregnant" name="red-alert-pregnant" value="Yes"> <span>Yes</span><br>
+                    <input type="radio" class="red-alert-pregnant" name="red-alert-pregnant" value="No"> <span>No</span><br>
+                </div>
+            </div>
+            <div>
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <label>Consent:</label><br>
+                    <table>
+                        <tr>
+                            <td>
+                                
+                            </td>
+                            <td onclick="RedAlertConsentFlipToYes()">
+                                <input type="radio"name="red-alert-all"  id="red-alert-all-all" value="All" checked>
+                                <label for="red-alert-all-all">
+                                    All
+                                </label>
+                            </td>
+                            <td onclick="RedAlertConsentFlipToNo()">
+                                <input type="radio" name="red-alert-all" id="red-alert-all-none" value="None">  
+                                <label for="red-alert-all-none">
+                                    None
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Scalp
+                            </td>
+                            <td onclick="RedAlertConsetClickFor('red-alert-scalp-yes')">
+                                <input type="radio" class="red-alert-consent" id="red-alert-scalp-yes" name="red-alert-scalp" value="Yes" checked>
+                                <label for="red-alert-scalp-yes">
+                                    Yes
+                                </label>
+                            </td>
+                            <td onclick="RedAlertConsetClickFor('red-alert-scalp-no')">
+                                <input type="radio" class="red-alert-consent" id="red-alert-scalp-no" name="red-alert-scalp" value="No">  
+                                <label for="red-alert-scalp-no">
+                                    No
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                pecs
+                            </td>
+                            <td onclick="RedAlertConsetClickFor('red-alert-pecs-yes')">
+                                <input type="radio" class="red-alert-consent" id="red-alert-pecs-yes" name="red-alert-pecs" value="Yes" checked>
+                                <label for="red-alert-pecs-yes">
+                                    Yes
+                                </label>
+                            </td>
+                            <td onclick="RedAlertConsetClickFor('red-alert-pecs-no')">
+                                <input type="radio" class="red-alert-consent" id="red-alert-pecs-no" name="red-alert-pecs" value="No">  
+                                <label for="red-alert-pecs-no">
+                                    No
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                abs
+                            </td>
+                            <td onclick="RedAlertConsetClickFor('red-alert-abs-yes')">
+                                <input type="radio" class="red-alert-consent" id="red-alert-abs-yes" name="red-alert-abs" value="Yes" checked>
+                                <label for="red-alert-abs-yes">
+                                    Yes
+                                </label>
+                            </td>
+                            <td onclick="RedAlertConsetClickFor('red-alert-abs-no')">
+                                <input type="radio" class="red-alert-consent" id="red-alert-abs-no" name="red-alert-abs" value="No">  
+                                <label for="red-alert-abs-no">
+                                    No
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                glutes
+                            </td>
+                            <td onclick="RedAlertConsetClickFor('red-alert-glutes-yes')">
+                                <input type="radio" class="red-alert-consent" id="red-alert-glutes-yes" name="red-alert-glutes" value="Yes" checked>
+                                <label for="red-alert-glutes-yes">
+                                    Yes
+                                </label>
+                            </td>
+                            <td onclick="RedAlertConsetClickFor('red-alert-glutes-no')">
+                                <input type="radio" class="red-alert-consent" id="red-alert-glutes-no" name="red-alert-glutes" value="No">  
+                                <label for="red-alert-glutes-no">
+                                    No
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                feet
+                            </td>
+                            <td onclick="RedAlertConsetClickFor('red-alert-feet-yes')">
+                                <input type="radio" class="red-alert-consent" id="red-alert-feet-yes" name="red-alert-feet" value="Yes" checked>
+                                <label for="red-alert-feet-yes">
+                                    Yes
+                                </label>
+                            </td>
+                            <td onclick="RedAlertConsetClickFor('red-alert-feet-no')">
+                                <input type="radio" class="red-alert-consent" id="red-alert-feet-no" name="red-alert-feet" value="No">  
+                                <label for="red-alert-feet-no">
+                                    No
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <label>Oncology Intake</label><br>
+                    <input type="radio" class="red-alert-oncology" name="red-alert-oncology" value="Yes"> <span>Yes</span><br>
+                    <input type="radio" class="red-alert-oncology" name="red-alert-oncology" value="No" checked> <span>No</span><br>
+                    <label for="red-alert-oncology-intake-date">Date</label>
+                    <input type="date" id="red-alert-oncology-intake-date" class="input-field" />
                 </div>
             </div>
             <div>
@@ -202,79 +328,79 @@
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
                     <label>Date</label>
-                    <input type="date" id="knowetm-date" class="input-field" />
+                    <input type="date" id="knowetm-date" class="input-field">
                 </div>
             </div>
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
                     <label>Name:</label>
-                    <input id="client-name" class="input-field" />
+                    <input id="client-name" class="input-field">
                 </div>
             </div>
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
                     <label>Occupation</label>
-                    <input id="knowetm-occupation" class="input-field" />
+                    <input id="knowetm-occupation" class="input-field">
                 </div>
             </div>
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>How did you hear about us?</label><br/>
-                    <input type="checkbox" class="how-heard" name="Drove By" /> <span>Drove By</span><br/>
-                    <input type="checkbox" class="how-heard" name="Member Referral" /> <span>Member Referral</span><br/>
-                    <input type="checkbox" class="how-heard" name="Advetisment" /> <span>Advetisment</span><br/>
-                    <input type="checkbox" class="how-heard" name="Other" /> <span>Other</span><br/>
+                    <label>How did you hear about us?</label><br>
+                    <input type="checkbox" class="how-heard" name="Drove By"> <span>Drove By</span><br>
+                    <input type="checkbox" class="how-heard" name="Member Referral"> <span>Member Referral</span><br>
+                    <input type="checkbox" class="how-heard" name="Advetisment"> <span>Advetisment</span><br>
+                    <input type="checkbox" class="how-heard" name="Other"> <span>Other</span><br>
                     <label>Other:</label>
-                    <input id="knowetm-how-other-detail" class="input-field" />
+                    <input id="knowetm-how-other-detail" class="input-field">
                 </div>
             </div>
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>Is this your first massage?</label><br/>
-                    <input type="checkbox" class="first-massage" name="Yes" /> <span>Yes</span><br/>
-                    <input type="checkbox" class="first-massage" name="No" /> <span>No</span><br/>
+                    <label>Is this your first massage?</label><br>
+                    <input type="checkbox" class="first-massage" name="Yes"> <span>Yes</span><br>
+                    <input type="checkbox" class="first-massage" name="No"> <span>No</span><br>
                     <label>If No where do you usually go?:</label>
-                    <input id="first-massage-detail" class="input-field" />
+                    <input id="first-massage-detail" class="input-field">
                 </div>
             </div>
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>How often do you get massages?</label><br/>
-                    <input type="checkbox" class="massage-frequency" name="Weekly" /> <span>Weekly</span><br/>
-                    <input type="checkbox" class="massage-frequency" name="Every Other Week" /> <span>Every Other Week</span><br/>
-                    <input type="checkbox" class="massage-frequency" name="Monthly" /> <span>Monthly</span><br/>
-                    <input type="checkbox" class="massage-frequency" name="Quarterly" /> <span>Quarterly</span><br/>
-                    <input type="checkbox" class="massage-frequency" name="Annually" /> <span>Annually</span><br/>
+                    <label>How often do you get massages?</label><br>
+                    <input type="checkbox" class="massage-frequency" name="Weekly"> <span>Weekly</span><br>
+                    <input type="checkbox" class="massage-frequency" name="Every Other Week"> <span>Every Other Week</span><br>
+                    <input type="checkbox" class="massage-frequency" name="Monthly"> <span>Monthly</span><br>
+                    <input type="checkbox" class="massage-frequency" name="Quarterly"> <span>Quarterly</span><br>
+                    <input type="checkbox" class="massage-frequency" name="Annually"> <span>Annually</span><br>
                 </div>
             </div>
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>What's your reason for coming in today?</label><br/>
-                    <input type="checkbox" class="reason" name="Stress" /> <span>Stress</span><br/>
-                    <input type="checkbox" class="reason" name="Pain" /> <span>Pain</span><br/>
-                    <input type="checkbox" class="reason" name="Headaches" /> <span>Headaches</span><br/>
-                    <input type="checkbox" class="reason" name="Relaxation" /> <span>Relaxation</span><br/>
-                    <input type="checkbox" class="reason" name="Insomnia" /> <span>Insomnia</span><br/>
-                    <input type="checkbox" class="reason" name="Prenatal" /> <span>Prenatal</span><br/>
-                    <input type="checkbox" class="reason" name="Sports Injury" /> <span>Sports Injury</span><br/>
-                    <input type="checkbox" class="reason" name="Prevention" /> <span>Prevention</span><br/>
-                    <input type="checkbox" class="reason" name="Muscle Knots" /> <span>Muscle Knots</span><br/>
+                    <label>What's your reason for coming in today?</label><br>
+                    <input type="checkbox" class="reason" name="Stress"> <span>Stress</span><br>
+                    <input type="checkbox" class="reason" name="Pain"> <span>Pain</span><br>
+                    <input type="checkbox" class="reason" name="Headaches"> <span>Headaches</span><br>
+                    <input type="checkbox" class="reason" name="Relaxation"> <span>Relaxation</span><br>
+                    <input type="checkbox" class="reason" name="Insomnia"> <span>Insomnia</span><br>
+                    <input type="checkbox" class="reason" name="Prenatal"> <span>Prenatal</span><br>
+                    <input type="checkbox" class="reason" name="Sports Injury"> <span>Sports Injury</span><br>
+                    <input type="checkbox" class="reason" name="Prevention"> <span>Prevention</span><br>
+                    <input type="checkbox" class="reason" name="Muscle Knots"> <span>Muscle Knots</span><br>
                     <label>Other:</label>
-                    <input id="knowetm-reason-other-detail" class="input-field" />
+                    <input id="knowetm-reason-other-detail" class="input-field">
                 </div>
             </div>
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
                     <label>What activities contribute most for your pain</label>
-                    <input id="activities" class="input-field" />
+                    <input id="activities" class="input-field">
                 </div>
             </div>
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>On a scale of 1-10 what is your current level of pain?</label><br/>
-                    <input type="radio" class="pain-level" name="pain-level" value="null" /> <span>N/A</span>
-                    <input type="radio" class="pain-level" name="pain-level" value="1" /> <span>1 (least)</span>
-                    <input type="radio" class="pain-level" name="pain-level" value="2" /> <span>2</span>
+                    <label>On a scale of 1-10 what is your current level of pain?</label><br>
+                    <input type="radio" class="pain-level" name="pain-level" value="null"> <span>N/A</span>
+                    <input type="radio" class="pain-level" name="pain-level" value="1"> <span>1 (least)</span>
+                    <input type="radio" class="pain-level" name="pain-level" value="2"> <span>2</span>
                     <input type="radio" class="pain-level" name="pain-level" value="3" /> <span>3</spa>
                     <input type="radio" class="pain-level" name="pain-level" value="4" /> <span>4</span>
                     <input type="radio" class="pain-level" name="pain-level" value="5" /> <span>5</span>
@@ -287,7 +413,7 @@
             </div>
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>On a scale of 1-10 what is your current level of stress?</label><br/>
+                    <label>On a scale of 1-10 what is your current level of stress?</label><br>
                     <input type="radio" class="stress-level" name="stress-level" value="null" /> <span>N/A</span>
                     <input type="radio" class="stress-level" name="stress-level" value="1" /> <span>1 (least)</span>
                     <input type="radio" class="stress-level" name="stress-level" value="2" /> <span>2</span>
@@ -331,70 +457,70 @@
             <h1>Appointment Notes Generator</h1>
             <div class="flex">
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>What's the state of the intake?</label><br/>
-                    <input type="radio" class="recent-intake" name="recent-intake" value="Current" /> <span>Current</span><br/>
-                    <input type="radio" class="recent-intake" name="recent-intake" value="Needs" /> <span>Needs Updating</span><br/>
-                    <input type="radio" class="recent-intake" name="recent-intake" value="Sent" /> <span>Sent</span><br/>
+                    <label>What's the state of the intake?</label><br>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="Current" /> <span>Current</span><br>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="Needs" /> <span>Needs Updating</span><br>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="Sent" /> <span>Sent</span><br>
                 </div>
             </div>
             <div class="flex">
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>What type of member are they?</label><br/>
-                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="mem" /> <span>Member</span><br/>
-                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="non-mem" /> <span>Non-Member</span><br/>
-                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="NC" /> <span>New Client</span><br/>
-                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="asc-mem" /> <span>Associate Member</span><br/>
-                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="off-mem" /> <span>Offsite Memeber</span><br/>
-                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="term-mem" /> <span>Terminated</span><br/>
-                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="susp-mem" /> <span>Suspended</span><br/>
+                    <label>What type of member are they?</label><br>
+                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="mem" /> <span>Member</span><br>
+                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="non-mem" /> <span>Non-Member</span><br>
+                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="NC" /> <span>New Client</span><br>
+                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="asc-mem" /> <span>Associate Member</span><br>
+                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="off-mem" /> <span>Offsite Memeber</span><br>
+                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="term-mem" /> <span>Terminated</span><br>
+                    <input type="radio" class="an-member-type form-control" name="an-member-type" value="susp-mem" /> <span>Suspended</span><br>
                 </div>
             </div>
             <div class="flex">
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>Planned payment option?</label><br/>
-                    <input type="radio" class="an-payment-opt form-control" name="an-payment-opt" value="banked" /> <span>Banked Session</span><br/>
-                    <span><label>Count: </label></span><input type="textbox" class="banked-session-count" name="banked-session-count" /><br/>
-                    <input type="radio" class="an-payment-opt form-control" name="an-payment-opt" value="mem-rate" /> <span>Member Rate</span><br/>
-                    <input type="radio" class="an-payment-opt form-control" name="an-payment-opt" value="NM-rate" /> <span>Non Member Rate</span><br/>
-                    <input type="radio" class="an-payment-opt form-control" name="an-payment-opt" value="GC" /> <span>Gift Card</span><br/>
-                    <input type="radio" class="an-payment-opt form-control" name="an-payment-opt" value="EP" /> <span>Elements Promise</span><br/>
+                    <label>Planned payment option?</label><br>
+                    <input type="radio" class="an-payment-opt form-control" name="an-payment-opt" value="banked" /> <span>Banked Session</span><br>
+                    <span><label>Count: </label></span><input type="textbox" class="banked-session-count" name="banked-session-count" /><br>
+                    <input type="radio" class="an-payment-opt form-control" name="an-payment-opt" value="mem-rate" /> <span>Member Rate</span><br>
+                    <input type="radio" class="an-payment-opt form-control" name="an-payment-opt" value="NM-rate" /> <span>Non Member Rate</span><br>
+                    <input type="radio" class="an-payment-opt form-control" name="an-payment-opt" value="GC" /> <span>Gift Card</span><br>
+                    <input type="radio" class="an-payment-opt form-control" name="an-payment-opt" value="EP" /> <span>Elements Promise</span><br>
                 </div>
             </div>
             <div>
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>Last Appointment Date</label><br/>
-                    <input type="date" name="an-last-seen-date" class="input-field" /> <br/>
-                    <span><label>Therapist: </label></span><br/>
-                    <input type="textbox" name="an-last-seen-therapist" class="input-field" /><br/><br/>
-                    <label>Next Appointment Date</label><br/>
-                    <input type="date" name="an-next-appointment-date" class="input-field" /><br/>
-                    <span><label>Therapist: </label></span><br/>
+                    <label>Last Appointment Date</label><br>
+                    <input type="date" name="an-last-seen-date" class="input-field" /> <br>
+                    <span><label>Therapist: </label></span><br>
+                    <input type="textbox" name="an-last-seen-therapist" class="input-field" /><br><br>
+                    <label>Next Appointment Date</label><br>
+                    <input type="date" name="an-next-appointment-date" class="input-field" /><br>
+                    <span><label>Therapist: </label></span><br>
                     <input type="textbox" name="an-next-appointment-therapist" class="input-field" />
                 </div>
             </div>
             <div class="flex">
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>Are there any focus areas?</label><br/>
+                    <label>Are there any focus areas?</label><br>
                     <input id="focus-areas" class="input-field" name="focus-areas" value="" />
                 </div>
             </div>
             <div class="flex">
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>Are we doing any enhancements?</label><br/>
-                    <input type="radio" class="an-enh form-control" name="an-enh" value="BDAYU" /> <span>Birthday Upgrade</span><br/>
-                    <input type="radio" class="an-enh form-control" name="an-enh" value="EP" /> <span>Elements Promise</span><br/>
-                    <input type="radio" class="an-enh form-control" name="an-enh" value="null" /> <span>No</span><br/>
-                    <input type="radio" class="an-enh form-control" name="an-enh" value="Yes" /> <span>Yes</span><br/>
+                    <label>Are we doing any enhancements?</label><br>
+                    <input type="radio" class="an-enh form-control" name="an-enh" value="BDAYU" /> <span>Birthday Upgrade</span><br>
+                    <input type="radio" class="an-enh form-control" name="an-enh" value="EP" /> <span>Elements Promise</span><br>
+                    <input type="radio" class="an-enh form-control" name="an-enh" value="null" /> <span>No</span><br>
+                    <input type="radio" class="an-enh form-control" name="an-enh" value="Yes" /> <span>Yes</span><br>
                     <input type="textbox" class="an-enh-field" name="an-enh-field" />
                 </div>
             </div>
             <div class="flex">
                 <div class="bg-grey padding-10 margin-1 roudned">
-                    <label>Confirmation?</label><br/>
-                    <input type="radio" class="an-confirm form-control" name="an-confirm" value="null" /> <span>No</span><br/>
-                    <input type="radio" class="an-confirm form-control" name="an-confirm" value="Live" /> <span>Live</span><br/>
-                    <input type="radio" class="an-confirm form-control" name="an-confirm" value="LVM" /> <span>Voicemail</span><br/>
-                    <label>Initials:</label><br/>
+                    <label>Confirmation?</label><br>
+                    <input type="radio" class="an-confirm form-control" name="an-confirm" value="null" /> <span>No</span><br>
+                    <input type="radio" class="an-confirm form-control" name="an-confirm" value="Live" /> <span>Live</span><br>
+                    <input type="radio" class="an-confirm form-control" name="an-confirm" value="LVM" /> <span>Voicemail</span><br>
+                    <label>Initials:</label><br>
                     <input type="textbox" class="an-confirm-field" name="an-confirm-field" />
                 </div>
             </div>
@@ -411,6 +537,281 @@
 
     </div>
     <script>
+        function RedAlertConsentFlipToYes(){
+            var scalp = document.querySelector("#red-alert-all-all").checked = true;
+            var scalp = document.querySelector("#red-alert-scalp-yes").checked = true;
+            var scalp = document.querySelector("#red-alert-pecs-yes").checked = true;
+            var scalp = document.querySelector("#red-alert-abs-yes").checked = true;
+            var scalp = document.querySelector("#red-alert-glutes-yes").checked = true;
+            var scalp = document.querySelector("#red-alert-feet-yes").checked = true;
+        }
+        function RedAlertConsentFlipToNo(){
+            var scalp = document.querySelector("#red-alert-all-none").checked = true;
+            var scalp = document.querySelector("#red-alert-scalp-no").checked = true;
+            var scalp = document.querySelector("#red-alert-pecs-no").checked = true;
+            var scalp = document.querySelector("#red-alert-abs-no").checked = true;
+            var scalp = document.querySelector("#red-alert-glutes-no").checked = true;
+            var scalp = document.querySelector("#red-alert-feet-no").checked = true;
+        }
+        function RedAlertConsetClickFor(e){
+            var scalp = document.querySelector(`#${e}`).checked = true;
+        }
+        function GenerateRedAlerts() {
+            //*****************
+            //CIF
+            //*****************
+            var redAlertDate = document.getElementById("red-alert-date").valueAsDate;
+            var redAlertMonth = `${(redAlertDate.getUTCMonth() + 1)}`.padStart(2, "0");
+            var outputString = `CIF ${redAlertMonth}/${redAlertDate.getUTCDate()}/${redAlertDate.getUTCFullYear()}\n`;
+
+            //*****************
+            //Pregnant
+            //*****************
+            var Pregnant = document.querySelector('input[name="red-alert-pregnant"]:checked')?.value;
+            if (Pregnant != null && Pregnant != undefined && Pregnant != "" && Pregnant != "No") {
+                outputString += `Pregnant: ${Pregnant}\n`;
+            }
+            //*****************
+            //Active Cancer
+            //*****************
+            var oncologyIntake = document.querySelector('input[name="red-alert-oncology"]:checked')?.value;
+            var oncologyIntakeDate = document.getElementById("red-alert-oncology-intake-date").valueAsDate;
+            if (oncologyIntake != null && oncologyIntake != undefined && oncologyIntake != "" && oncologyIntake != "No") {
+                var oncologyIntakeMonth = `${(oncologyIntakeDate.getUTCMonth() + 1)}`.padStart(2, "0");
+                outputString += `Active Cancer: ${oncologyIntakeMonth}/${oncologyIntakeDate.getUTCDate()}/${oncologyIntakeDate.getUTCFullYear()}\n`;
+            }
+            //*****************
+            //Allergies
+            //*****************
+            var allergies = document.getElementById("allergies").value;
+            if (typeof allergies === "string" && allergies.length > 0) {
+                outputString += `Allergies: ${allergies}\n`;
+            }
+            //*****************
+            //Yes
+            //*****************
+            var yesOutput = "";
+            var noOutput = "";
+            
+            var scalp = document.querySelector('input[name="red-alert-scalp"]:checked')?.value;
+            var pecs = document.querySelector('input[name="red-alert-pecs"]:checked')?.value;
+            var abs = document.querySelector('input[name="red-alert-abs"]:checked')?.value;
+            var glutes = document.querySelector('input[name="red-alert-glutes"]:checked')?.value;
+            var feet = document.querySelector('input[name="red-alert-feet"]:checked')?.value;
+        
+            if(scalp == "Yes" && pecs == "Yes" && abs == "Yes" && glutes == "Yes" && feet == "Yes")
+            {
+                outputString += `Yes: All\n`;
+            }
+            else if(scalp == "No" && pecs == "No" && abs == "No" && glutes == "No" && feet == "No")
+            {
+                outputString += `No: All\n`;
+            }
+            else
+            {
+                outputString += `Yes:`;
+                if(scalp == "Yes"){ outputString += `Scalp ` } else{ outputString += ``; }
+                if(pecs == "Yes"){ outputString += `Pecs ` } else{ outputString += ``; }
+                if(abs == "Yes"){ outputString += `Abs ` } else{ outputString += ``; }
+                if(glutes == "Yes"){ outputString += `Glutes ` } else{ outputString += ``; }
+                if(feet == "Yes"){ outputString += `Feet ` } else{ outputString += ``; }
+                outputString += `\n`;
+
+                outputString += `No:`;
+                if(scalp == "No"){ outputString += `Scalp ` } else{ outputString += ``; }
+                if(pecs == "No"){ outputString += `Pecs ` } else{ outputString += ``; }
+                if(abs == "No"){ outputString += `Abs ` } else{ outputString += ``; }
+                if(glutes == "No"){ outputString += `Glutes ` } else{ outputString += ``; }
+                if(feet == "No"){ outputString += `Feet ` } else{ outputString += ``; }
+                outputString += `\n`;
+            }
+
+            //*****************
+            //Occupation
+            //*****************
+            var occupation = document.getElementById("red-alert-occupation").value;
+            if (typeof occupation === "string" && occupation.length !== 0) {
+                outputString += `Occupation: ${occupation}\n`;
+            }
+            //*****************
+            //HH
+            //*****************
+            var healthHistoryElements = document.getElementsByClassName("hh");
+            var hhOutput = "";
+            var first = true;
+            for (let index = 0; index < healthHistoryElements.length; index++) {
+                const element = healthHistoryElements.item(index);
+                var name = element.getAttribute("name");
+                if (element.checked) {
+                    if (first) {
+                        first = false;
+                        hhOutput += `${element.getAttribute("name")}`;
+                    } else {
+                        hhOutput += `, ${element.getAttribute("name")}`;
+                    }
+                }
+            }
+            if (typeof hhOutput === "string" && hhOutput.length > 0) {
+                outputString += `HH: ${hhOutput}\n`;
+            }
+
+            var numbnessOutput = document.getElementById("hh-numbness").value;
+            if (typeof numbnessOutput === "string" && numbnessOutput.length > 0) {
+                outputString += `Numbness/Tingling: ${numbnessOutput}\n`;
+            }
+
+
+            var medicalConditionsOutput = document.getElementById("medical-conditions").value;
+            if (typeof medicalConditionsOutput === "string" && medicalConditionsOutput.length > 0) {
+                outputString += `Medical Conditions: ${medicalConditionsOutput}\n`;
+            }
+            var medicationsOutput = document.getElementById("medications").value;
+            if (typeof medicationsOutput === "string" && medicationsOutput.length > 0) {
+                outputString += `Medications: ${medicationsOutput}\n`;
+            }
+            var injuriesOutput = document.getElementById("injuries").value;
+            if (typeof injuriesOutput === "string" && injuriesOutput.length > 0) {
+                outputString += `Injuries: ${injuriesOutput}\n`;
+            }
+
+            document.getElementById("red-alert-output").value = outputString;
+        }
+
+        function GenerateKNOWETM() {
+            //*****************
+                //CIF
+                //*****************
+                var knowetmDate = document.getElementById("knowetm-date").valueAsDate;
+    
+                var knowetmDateMonth = `${(knowetmDate.getUTCMonth() + 1)}`.padStart(2, "0");
+                var knowetmDateDay = `${knowetmDate.getUTCDate()}`.padStart(2, "0");
+                var knowetmDateYear = `${knowetmDate.getUTCFullYear()}`;
+                var outputString = `Completed Date:  ${knowetmDateMonth}/${knowetmDateDay}/${knowetmDateYear}\n`;
+                console.log();
+                //*****************
+                //name
+                //*****************
+                var clientName = document.getElementById("client-name");
+                if (clientName.value != "") {
+                    outputString += `Name: ${document.getElementById("client-name").value}\n`;
+                }
+    
+                //*****************
+                //occupation
+                //*****************
+                var knowetmOccupation = document.getElementById("knowetm-occupation");
+                if (typeof knowetmOccupation === "string" && knowetmOccupation.length === 0) {
+                    outputString += `Occupation: ${document.getElementById("knowetm-occupation").value}\n`;
+                }
+    
+                //*****************
+                //how did you hear about us
+                //*****************
+                var howHeard = document.getElementsByClassName("how-heard");
+                for (let index = 0; index < howHeard.length; index++) {
+                    const element = howHeard.item(index);
+                    var name = element.getAttribute("name");
+                    if (element.checked) {
+                        outputString += `How did you hear about us: ${name} ${document.getElementById("knowetm-how-other-detail").value}\n`;
+                    }
+                }
+    
+    
+                //*****************
+                //first massage?
+                //*****************
+    
+                var firstMassage = document.getElementsByClassName("first-massage");
+                var firstMassageDetail = document.getElementById("first-massage-detail");
+                for (let index = 0; index < firstMassage.length; index++) {
+                    const element = firstMassage.item(index);
+                    var name = element.getAttribute("name");
+                    if (element.checked) {
+                        if (firstMassageDetail.value != "") {
+                            outputString += `First massage?: ${name}, Typicallys goes to: ${document.getElementById("first-massage-detail").value}\n`;
+                        } else {
+                            outputString += `First massage?: ${name}\n`;
+                        }
+                    }
+                }
+    
+                //*****************
+                //frequency
+                //*****************
+    
+                var massageFrequency = document.getElementsByClassName("massage-frequency");
+                for (let index = 0; index < massageFrequency.length; index++) {
+                    const element = massageFrequency.item(index);
+                    var name = element.getAttribute("name");
+                    if (element.checked) {
+                        outputString += `Desired Frequency: ${name}\n`;
+                    }
+                }
+    
+                //*****************
+                //Reasons
+                //*****************
+                var knowetmReasons = "";
+                var reasons = document.getElementsByClassName("reason");
+                var firstReason = true;
+                for (let index = 0; index < reasons.length; index++) {
+                    const element = reasons.item(index);
+                    var name = element.getAttribute("name");
+                    if (element.checked) {
+                        if (firstReason) {
+                            firstReason = false;
+                            knowetmReasons += `${element.getAttribute("name")}`;
+                        } else {
+                            knowetmReasons += `, ${element.getAttribute("name")}`;
+                        }
+                    }
+                }
+                if (knowetmReasons != "") {
+                    outputString += `Reasons for coming in: ${knowetmReasons}\n`;
+                }
+    
+                var reasonStringOutput = document.getElementById("knowetm-reason-other-detail").value;
+                if (typeof reasonStringOutput === "string" && reasonStringOutput.length > 0) {
+                    outputString += `Other Reason For Coming in: ${reasonStringOutput}`;
+                }
+    
+                //*****************
+                //activities
+                //*****************
+                var knowetmActivities = document.getElementById("activities");
+                if (knowetmActivities.value != "") {
+                    outputString += `Activities that contribute to pain/stress: ${knowetmActivities.value}\n`;
+                }
+                //*****************
+                //level
+                //*****************
+                var painLevel = document.querySelector('input[name="pain-level"]:checked');
+                if (painLevel != null && painLevel.value != "null") {
+                    outputString += `Pain Level: ${painLevel.value}/${document.getElementsByName("pain-level").length}\n`;
+                }
+                var stressLevel = document.querySelector('input[name="stress-level"]:checked');
+                if (stressLevel != null && stressLevel.value != "null") {
+                    outputString += `stress Level: ${stressLevel.value}/${document.getElementsByName("stress-level").length}\n`;
+                }
+                //*****************
+                //activities
+                //*****************
+                var preventedActivities = document.getElementById("prevented-activities");
+                if (preventedActivities.value != "") {
+                    outputString += `Activities prevented by pain/stress: ${preventedActivities.value}\n`;
+                }
+                //*****************
+                //prevention
+                //*****************
+                var mitigation = document.getElementById("mitigation");
+                if (mitigation.value != "") {
+                    outputString += `How they deal with the pain/stress: ${mitigation.value}\n`;
+                }
+    
+    
+                document.getElementById("knowetm-output").value = outputString;
+            }
+    
         function GenerateAppointmentNotes() {
             var outputString = "";
 
@@ -492,239 +893,6 @@
             document.getElementById("appointment-notes-output").value = outputString;
         }
 
-        function GenerateKNOWETM() {
-            //*****************
-            //CIF
-            //*****************
-            var knowetmDate = document.getElementById("knowetm-date").valueAsDate;
-
-            var knowetmDateMonth = `${(knowetmDate.getUTCMonth() + 1)}`.padStart(2, "0");
-            var knowetmDateDay = `${knowetmDate.getUTCDate()}`.padStart(2, "0");
-            var knowetmDateYear = `${knowetmDate.getUTCFullYear()}`;
-            var outputString = `Completed Date:  ${knowetmDateMonth}/${knowetmDateDay}/${knowetmDateYear}\n`;
-            console.log();
-            //*****************
-            //name
-            //*****************
-            var clientName = document.getElementById("client-name");
-            if (clientName.value != "") {
-                outputString += `Name: ${document.getElementById("client-name").value}\n`;
-            }
-
-            //*****************
-            //occupation
-            //*****************
-            var knowetmOccupation = document.getElementById("knowetm-occupation");
-            if (typeof knowetmOccupation === "string" && knowetmOccupation.length === 0) {
-                outputString += `Occupation: ${document.getElementById("knowetm-occupation").value}\n`;
-            }
-
-            //*****************
-            //how did you hear about us
-            //*****************
-            var howHeard = document.getElementsByClassName("how-heard");
-            for (let index = 0; index < howHeard.length; index++) {
-                const element = howHeard.item(index);
-                var name = element.getAttribute("name");
-                if (element.checked) {
-                    outputString += `How did you hear about us: ${name} ${document.getElementById("knowetm-how-other-detail").value}\n`;
-                }
-            }
-
-
-            //*****************
-            //first massage?
-            //*****************
-
-            var firstMassage = document.getElementsByClassName("first-massage");
-            var firstMassageDetail = document.getElementById("first-massage-detail");
-            for (let index = 0; index < firstMassage.length; index++) {
-                const element = firstMassage.item(index);
-                var name = element.getAttribute("name");
-                if (element.checked) {
-                    if (firstMassageDetail.value != "") {
-                        outputString += `First massage?: ${name}, Typicallys goes to: ${document.getElementById("first-massage-detail").value}\n`;
-                    } else {
-                        outputString += `First massage?: ${name}\n`;
-                    }
-                }
-            }
-
-            //*****************
-            //frequency
-            //*****************
-
-            var massageFrequency = document.getElementsByClassName("massage-frequency");
-            for (let index = 0; index < massageFrequency.length; index++) {
-                const element = massageFrequency.item(index);
-                var name = element.getAttribute("name");
-                if (element.checked) {
-                    outputString += `Desired Frequency: ${name}\n`;
-                }
-            }
-
-            //*****************
-            //Reasons
-            //*****************
-            var knowetmReasons = "";
-            var reasons = document.getElementsByClassName("reason");
-            var firstReason = true;
-            for (let index = 0; index < reasons.length; index++) {
-                const element = reasons.item(index);
-                var name = element.getAttribute("name");
-                if (element.checked) {
-                    if (firstReason) {
-                        firstReason = false;
-                        knowetmReasons += `${element.getAttribute("name")}`;
-                    } else {
-                        knowetmReasons += `, ${element.getAttribute("name")}`;
-                    }
-                }
-            }
-            if (knowetmReasons != "") {
-                outputString += `Reasons for coming in: ${knowetmReasons}\n`;
-            }
-
-            var reasonStringOutput = document.getElementById("knowetm-reason-other-detail").value;
-            if (typeof reasonStringOutput === "string" && reasonStringOutput.length > 0) {
-                outputString += `Other Reason For Coming in: ${reasonStringOutput}`;
-            }
-
-            //*****************
-            //activities
-            //*****************
-            var knowetmActivities = document.getElementById("activities");
-            if (knowetmActivities.value != "") {
-                outputString += `Activities that contribute to pain/stress: ${knowetmActivities.value}\n`;
-            }
-            //*****************
-            //level
-            //*****************
-            var painLevel = document.querySelector('input[name="pain-level"]:checked');
-            if (painLevel != null && painLevel.value != "null") {
-                outputString += `Pain Level: ${painLevel.value}/${document.getElementsByName("pain-level").length}\n`;
-            }
-            var stressLevel = document.querySelector('input[name="stress-level"]:checked');
-            if (stressLevel != null && stressLevel.value != "null") {
-                outputString += `stress Level: ${stressLevel.value}/${document.getElementsByName("stress-level").length}\n`;
-            }
-            //*****************
-            //activities
-            //*****************
-            var preventedActivities = document.getElementById("prevented-activities");
-            if (preventedActivities.value != "") {
-                outputString += `Activities prevented by pain/stress: ${preventedActivities.value}\n`;
-            }
-            //*****************
-            //prevention
-            //*****************
-            var mitigation = document.getElementById("mitigation");
-            if (mitigation.value != "") {
-                outputString += `How they deal with the pain/stress: ${mitigation.value}\n`;
-            }
-
-
-            document.getElementById("knowetm-output").value = outputString;
-        }
-
-        function GenerateRedAlerts() {
-            //*****************
-            //CIF
-            //*****************
-            var redAlertDate = document.getElementById("red-alert-date").valueAsDate;
-            var redAlertMonth = `${(redAlertDate.getUTCMonth() + 1)}`.padStart(2, "0");
-            var outputString = `CIF ${redAlertMonth}/${redAlertDate.getUTCDate()}/${redAlertDate.getUTCFullYear()}\n`;
-            console.log();
-
-            //*****************
-            //Yes
-            //*****************
-            var yesOutput = "";
-            var noOutput = "";
-            var yesElements = document.getElementsByClassName("yes");
-
-            var firstYes = true;
-            for (let index = 0; index < yesElements.length; index++) {
-                const element = yesElements.item(index);
-                var name = element.getAttribute("name");
-                if (element.checked) {
-                    if (firstYes) {
-                        firstYes = false;
-                        yesOutput += `${element.getAttribute("name")}`;
-                    } else {
-                        yesOutput += `, ${element.getAttribute("name")}`;
-                    }
-                }
-            }
-            outputString += `YES: ${yesOutput}\n`;
-
-            var noElements = document.getElementsByClassName("no");
-            var firstNo = true;
-            for (let index = 0; index < noElements.length; index++) {
-                const element = noElements.item(index);
-                var name = element.getAttribute("name");
-                if (element.checked) {
-                    if (firstNo) {
-                        firstNo = false;
-                        noOutput += `${element.getAttribute("name")}`;
-                    } else {
-                        noOutput += `, ${element.getAttribute("name")}`;
-                    }
-                }
-            }
-
-            outputString += `NO: ${noOutput}\n\n`;
-            //*****************
-            //Occupation
-            //*****************
-            var occupation = document.getElementById("red-alert-occupation").value;
-            if (typeof occupation === "string" && occupation.length !== 0) {
-                outputString += `Occupation: ${occupation}\n`;
-            }
-            //*****************
-            //HH
-            //*****************
-            var healthHistoryElements = document.getElementsByClassName("hh");
-            var hhOutput = "";
-            var first = true;
-            for (let index = 0; index < healthHistoryElements.length; index++) {
-                const element = healthHistoryElements.item(index);
-                var name = element.getAttribute("name");
-                if (element.checked) {
-                    if (first) {
-                        first = false;
-                        hhOutput += `${element.getAttribute("name")}`;
-                    } else {
-                        hhOutput += `, ${element.getAttribute("name")}`;
-                    }
-                }
-            }
-            if (typeof hhOutput === "string" && hhOutput.length > 0) {
-                outputString += `HH: ${hhOutput}\n\n`;
-            }
-
-            var numbnessOutput = document.getElementById("hh-numbness").value;
-            if (typeof numbnessOutput === "string" && numbnessOutput.length > 0) {
-                outputString += `Numbness/Tingling Location: ${numbnessOutput}\n\n`;
-            }
-
-
-            var medicalConditionsOutput = document.getElementById("medical-conditions").value;
-            if (typeof medicalConditionsOutput === "string" && medicalConditionsOutput.length > 0) {
-                outputString += `Medical Conditions: ${medicalConditionsOutput}\n`;
-            }
-            var medicationsOutput = document.getElementById("medications").value;
-            if (typeof medicationsOutput === "string" && medicationsOutput.length > 0) {
-                outputString += `Medications: ${medicationsOutput}\n`;
-            }
-            var injuriesOutput = document.getElementById("injuries").value;
-            if (typeof injuriesOutput === "string" && injuriesOutput.length > 0) {
-                outputString += `Injuries: ${injuriesOutput}\n`;
-            }
-
-            document.getElementById("red-alert-output").value = outputString;
-        }
-
         function ClearAppointmentNotes() {
             location.reload();
             document.getElementById("appointment-notes-output").value = "";
@@ -742,6 +910,7 @@
 
         document.getElementById("knowetm-date").valueAsDate = new Date();
         document.getElementById("red-alert-date").valueAsDate = new Date();
+        document.getElementById("red-alert-oncology-intake-date").valueAsDate = new Date();
     </script>
 </body>
 
