@@ -458,7 +458,7 @@
             <div class="flex">
                 <div class="bg-grey padding-10 margin-1 roudned">
                     <label>What's the state of the intake?</label><br>
-                    <input type="radio" class="recent-intake" name="recent-intake" value="Current" checked> <span>Current</span><br>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="null" checked> <span>Current</span><br>
                     <input type="radio" class="recent-intake" name="recent-intake" value="MT Sign Off" > <span>MT Sign Off</span><br>
                     <input type="radio" class="recent-intake" name="recent-intake" value="Sent" > <span>Sent</span><br>
                 </div>
@@ -815,15 +815,22 @@
             }
 
             var intakeState = document.querySelector('input[name="recent-intake"]:checked');
+
+            
             if (intakeState != null && intakeState.value != "null") {
                 outputString += `Intake: ${intakeState.value}\n`;
             }
 
             var paymentType = document.querySelector('input[name="an-payment-opt"]:checked');
             if (paymentType != null && paymentType.value != "null") {
-                var bankedSessionCount = document.querySelector('input[name="banked-session-count"]');
+                var bankedSessionCount = document.querySelector('input[name="banked-session-count"]')?.value;
                 if (paymentType.value == "banked") {
-                    outputString += `${paymentType.value}: ${bankedSessionCount.value} \n`;
+                    if(bankedSessionCount != null && bankedSessionCount > 0){
+                        outputString += `${paymentType.value}: ${bankedSessionCount} \n`;
+                    }
+                    else{
+                        outputString += `${paymentType.value}\n`;
+                    }
                 } else {
                     outputString += `${paymentType.value}\n`;
                 }
@@ -883,17 +890,17 @@
         }
 
         function ClearAppointmentNotes() {
-            location.reload();
+            location.reload(true);
             document.getElementById("appointment-notes-output").value = "";
         }
 
         function ClearKNOWETM() {
-            location.reload();
+            location.reload(true);
             document.getElementById("knowetm-output").value = "";
         }
 
         function ClearRedAlerts() {
-            location.reload();
+            location.reload(true);
             document.getElementById("red-alert-output").value = "";
         }
 
