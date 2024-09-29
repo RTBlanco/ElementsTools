@@ -1,0 +1,247 @@
+<html>
+    <head>
+        <style>
+            * {
+                padding: 0px;
+                margin: 0px;
+            }
+            
+            .flex {
+                display: flex;
+                flex-flow: column wrap;
+            }
+            
+            .padding-10 {
+                padding: 2%;
+            }
+            
+            .full-width {
+                width: 95%;
+            }
+            
+            .col-2 {
+                width: 50%;
+            }
+            
+            .col-4 {
+                width: 25%;
+            }
+            
+            .margin-1 {
+                margin-top: 1px;
+            }
+            
+            .bg-grey {
+                background-color: #CCC;
+            }
+            
+            .bg-red {
+                background-color: #F88;
+            }
+            
+            .roudned {
+                border-style: solid;
+                border-width: 2px;
+                border-color: #000;
+                border-radius: 5px;
+            }
+            
+            label {
+                font-weight: 600;
+            }
+            
+            #container {
+                width: 100%;
+                display: flex;
+            }
+    
+            table{
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            td, th {
+                border: 1px solid black;
+                padding: 8px;
+            }
+            tr:nth-child(even){background-color: #f2f2f2;}
+        </style>
+    </head>
+    <body>
+        <div id="appointment-notes">
+            <h1>Appointment Notes Generator</h1>
+            <div class="flex">
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <label>What's the state of the intake?</label><br>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="Needs To Be Sent" checked> <span>Needs to be Sent</span><br>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="Sent" > <span>Sent</span><br>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="Current" checked> <span>Current</span><br>
+                    <input type="radio" class="recent-intake" name="recent-intake" value="MT Sign Off" > <span>MT Sign Off</span><br>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <label>What type of member are they?</label><br>
+                    <input type="radio" class="member-type form-control" name="member-type" value="mem" checked> <span>Member</span><br>
+                    <input type="radio" class="member-type form-control" name="member-type" value="non-mem" > <span>Non-Member</span><br>
+                    <input type="radio" class="member-type form-control" name="member-type" value="NC" > <span>New Client</span><br>
+                    <input type="radio" class="member-type form-control" name="member-type" value="asc-mem" > <span>Associate Member</span><br>
+                    <input type="radio" class="member-type form-control" name="member-type" value="off-mem" > <span>Offsite Memeber</span><br>
+                    <input type="radio" class="member-type form-control" name="member-type" value="term-mem" > <span>Terminated</span><br>
+                    <input type="radio" class="member-type form-control" name="member-type" value="susp-mem" > <span>Suspended</span><br>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <label>Planned payment option?</label><br>
+                    <input type="radio" class="payment-opt form-control" name="payment-opt" value="banked" checked> <span>Banked Session</span><br>
+                    <span><label>Count: </label></span><input type="textbox" class="banked-session-count" name="banked-session-count" ><br>
+                    <input type="radio" class="payment-opt form-control" name="payment-opt" value="mem-rate" > <span>Member Rate</span><br>
+                    <input type="radio" class="payment-opt form-control" name="payment-opt" value="NM-rate" > <span>Non Member Rate</span><br>
+                    <input type="radio" class="payment-opt form-control" name="payment-opt" value="GC" > <span>Gift Card</span><br>
+                    <input type="radio" class="payment-opt form-control" name="payment-opt" value="EP" > <span>Elements Promise</span><br>
+                </div>
+            </div>
+            <div>
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <label>Last Appointment Date</label><br>
+                    <input type="date" name="last-seen-date" class="input-field" > <br>
+                    <span><label>Therapist: </label></span><br>
+                    <input type="textbox" name="last-seen-therapist" class="input-field" ><br><br>
+                    <label>Next Appointment Date</label><br>
+                    <input type="date" name="next-appointment-date" class="input-field" ><br>
+                    <span><label>Therapist: </label></span><br>
+                    <input type="textbox" name="next-appointment-therapist" class="input-field" >
+                </div>
+            </div>
+            <div class="flex">
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <label>Did we do an enhancement last time?</label><br>
+                    <input type="radio" class="last-enh form-control" name="last-enh" value="null" checked> <span>No</span><br>
+                    <input type="radio" class="last-enh form-control" name="last-enh" value="HSS" > <span>Himalayan Salt Stones</span><br>
+                    <input type="radio" class="last-enh form-control" name="last-enh" value="Cup" > <span>Cupping</span><br>
+                    <input type="radio" class="last-enh form-control" name="last-enh" value="Aroma" > <span>Aroma</span><br>
+                    <input type="radio" class="last-enh form-control" name="last-enh" value="CBD" > <span>CBD</span><br>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <label>Do they have an enhancment promo?</label><br>
+                    <input type="radio" class="enh form-control" name="enh" value="null" checked> <span>No</span><br>
+                    <input type="radio" class="enh form-control" name="enh" value="BDAYU" > <span>Birthday Upgrade</span><br>
+                    <input type="radio" class="enh form-control" name="enh" value="EP" > <span>Elements Promise</span><br>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <label>Confirmation?</label><br>
+                    <input type="radio" class="confirm form-control" name="confirm" value="null" checked> <span>No</span><br>
+                    <input type="radio" class="confirm form-control" name="confirm" value="Live" > <span>Live</span><br>
+                    <input type="radio" class="confirm form-control" name="confirm" value="TXT" > <span>Text Message</span><br>
+                    <input type="radio" class="confirm form-control" name="confirm" value="LVM" > <span>Voicemail</span><br>
+                    <label>Initials:</label><br>
+                    <input type="textbox" class="confirm-field" name="confirm-field" >
+                </div>
+            </div>
+            <div class="flex">
+                <div class="bg-grey padding-10 margin-1 roudned">
+                    <div>
+                        <button onclick="GenerateAppointmentNotes()">Generate</button>
+                        <button onclick="Clear()">Clear</button>
+                    </div>
+                    <textarea id="appointment-notes-output" style="width: 100%; height: 200px;"></textarea>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            
+        function GenerateAppointmentNotes() {
+            var outputString = "";
+
+            var memType = document.querySelector('input[name="member-type"]:checked');
+            if (memType != null && memType.value != "null") {
+                outputString += `${memType.value}\n`;
+            }
+
+            var intakeState = document.querySelector('input[name="recent-intake"]:checked');
+            if (intakeState != null && intakeState.value != "null") {
+                outputString += `Intake: ${intakeState.value}\n`;
+            }
+
+            var lastEnhancement = document.querySelector('input[name="last-enh"]:checked');
+            if (lastEnhancement != null && lastEnhancement.value != "null") {
+                outputString += `Last ENH: ${lastEnhancement.value}\n`;
+            }
+
+            var enhancement = document.querySelector('input[name="enh"]:checked');
+            if (enhancement != null && enhancement.value != "null") {
+                outputString += `Promo: ${enhancement.value}\n`;
+            }
+
+            var paymentType = document.querySelector('input[name="payment-opt"]:checked');
+            if (paymentType != null && paymentType.value != "null") {
+                var bankedSessionCount = document.querySelector('input[name="banked-session-count"]')?.value;
+                if (paymentType.value == "banked") {
+                    if(bankedSessionCount != null && bankedSessionCount > 0){
+                        outputString += `${paymentType.value}: ${bankedSessionCount}\n`;
+                    }
+                    else{
+                        outputString += `${paymentType.value}\n`;
+                    }
+                } else {
+                    outputString += `${paymentType.value}\n`;
+                }
+            }
+
+            var lastSeen = document.querySelector('input[name="last-seen-date"]').valueAsDate;
+            var lastSeenTherapist = document.querySelector('input[name="last-seen-therapist"]');
+            if (lastSeen != null && lastSeen.value != "null") {
+                var lastSeenMonth = `${lastSeen.getUTCMonth() + 1}`.padStart(2, "0");
+                var lastSeenDay = `${lastSeen.getUTCDate()}`.padStart(2, "0");
+                var lastSeenYear = `${lastSeen.getUTCFullYear()}`;
+                var lastSeenDateString = `${lastSeenMonth}/${lastSeenDay}/${lastSeenYear}`
+                if (lastSeenTherapist != null && lastSeenTherapist.value != "") {
+                    outputString += `LS: ${lastSeenDateString} MT: ${lastSeenTherapist.value}\n`;
+                } else {
+                    outputString += `LS: ${lastSeenDateString}\n`;
+                }
+            }
+
+            var nextSeen = document.querySelector('input[name="next-appointment-date"]').valueAsDate;
+            var nextSeenTherapist = document.querySelector('input[name="next-appointment-therapist"]');
+            if (nextSeen != null && nextSeen.value != "" && nextSeen.value != "null") {
+                var nextSeenMonth = `${(nextSeen.getUTCMonth() + 1)}`.padStart(2, "0");
+                var nextSeenDay = `${nextSeen.getUTCDate()}`.padStart(2, "0");
+                var nextSeenYear = `${nextSeen.getUTCFullYear()}`;
+                var nextSeenDateString = `${nextSeenMonth}/${nextSeenDay}/${nextSeenYear}`
+                if (nextSeenTherapist != null && nextSeenTherapist.value != "") {
+                    outputString += `NS: ${nextSeenDateString} MT: ${nextSeenTherapist.value}\n`;
+                } else {
+                    outputString += `NS: ${nextSeenDateString}\n`;
+                }
+            } else {
+                outputString += `NS: None Scheduled\n`;
+            }
+
+
+            var confirmation = document.querySelector('input[name="confirm"]:checked');
+            var confirmationField = document.querySelector('input[name="confirm-field"]');
+            if (confirmation != null && confirmation.value != "null") {
+                if (confirmationField != null && confirmationField.value != "") {
+                    outputString += `${confirmation.value} conf: ${confirmationField.value}\n`;
+                } else {
+                    outputString += `${confirmation.value} conf\n`;
+                }
+            }
+
+            document.getElementById("appointment-notes-output").value = outputString;
+        }
+
+        function Clear() {
+            location.reload(true);
+        }
+        </script>
+    </body>
+</html>

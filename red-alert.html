@@ -1,0 +1,439 @@
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .flex {
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .padding-10 {
+            padding: 2%;
+        }
+
+        .full-width {
+            width: 95%;
+        }
+
+        .col-2 {
+            width: 50%;
+        }
+
+        .col-4 {
+            width: 25%;
+        }
+
+        .margin-1 {
+            margin-top: 1px;
+        }
+
+        .bg-grey {
+            background-color: #CCC;
+        }
+
+        .bg-red {
+            background-color: #F88;
+        }
+
+        .roudned {
+            border-style: solid;
+            border-width: 2px;
+            border-color: #000;
+            border-radius: 5px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        #container {
+            width: 100%;
+            display: flex;
+        }
+
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="red-alerts">
+        <h1>Red Alert Generator</h1>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>Date</label>
+                <input type="date" id="red-alert-date" class="input-field">
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey full-width padding-10 margin-1 roudned">
+                <label>Occupation</label>
+                <input id="red-alert-occupation" class="input-field">
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <div>
+                    <label>Current / Past Conditions:</label>
+                </div>
+                <input class="hh" type="checkbox" name="Headaches"> <span>Headaches</span><br>
+                <input class="hh" type="checkbox" name="Muscle/Joint pain"> <span>Muscle/Joint pain</span><br>
+                <input class="hh" type="checkbox" name="Stroke/Heart Attack"> <span>Stroke/Heart Attack</span><br>
+                <input class="hh" type="checkbox" name="Blood Clots"> <span>Blood Clots</span><br>
+                <hr>
+                <input class="hh" type="checkbox" name="Seizures"> <span>Seizures</span><br>
+                <input class="hh" type="checkbox" name="Bruise Easily"> <span>Bruise Easily</span><br>
+                <input class="hh" type="checkbox" name="High/Low Blood Pressure"> <span>High/Low Blood
+                    Pressure</span><br>
+                <input class="hh" type="checkbox" name="Diabetes"> <span>Diabetes</span><br>
+                <hr>
+                <input class="hh" type="checkbox" name="Fibromyalgia"> <span>Fibromyalgia</span><br>
+                <input class="hh" type="checkbox" name="Varicose Veins"> <span>Varicose Veins</span><br>
+                <input class="hh" type="checkbox" name="Active Cancer"> <span>Active Cancer</span><br>
+                <input class="hh" type="checkbox" name="Osteoporosis"> <span>Osteoporosis</span><br>
+                <hr>
+                <input class="hh" type="checkbox" name="Contact Lenses"> <span>Contact Lenses</span><br>
+                <input class="hh" type="checkbox" name="Jaw Clenching/Teeth Grinding"> <span>Jaw Clenching/Teeth
+                    Grinding</span><br>
+                <span>Numbness/Tingling Location:</span><input id="hh-numbness" type="text"><br>
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey full-width padding-10 margin-1 roudned">
+                <label>Other Medical Conditions:</label><br>
+                <textarea id="medical-conditions" style="width: 300px; height: 50px;"></textarea>
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey full-width padding-10 margin-1 roudned">
+                <label>Current Medications:</label><br>
+                <textarea id="medications" style="width: 300px; height: 50px;"></textarea>
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey full-width padding-10 margin-1 roudned">
+                <label>Accidents, injuries and/or surgeries in the last two years:</label><br>
+                <textarea id="injuries" style="width: 300px; height: 50px;"></textarea>
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey full-width padding-10 margin-1 roudned">
+                <label>Allergies/Skin Sensitivities:</label><br>
+                <textarea id="allergies" style="width: 300px; height: 50px;"></textarea>
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>Pregnant:</label><br>
+                <input type="radio" class="red-alert-pregnant" name="red-alert-pregnant" value="Yes">
+                <span>Yes</span><br>
+                <input type="radio" class="red-alert-pregnant" name="red-alert-pregnant" value="No"> <span>No</span><br>
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>Consent:</label><br>
+                <table>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td onclick="RedAlertConsentFlipToYes()">
+                            <input type="radio" name="red-alert-all" id="red-alert-all-all" value="All" checked>
+                            <label for="red-alert-all-all">
+                                All
+                            </label>
+                        </td>
+                        <td onclick="RedAlertConsentFlipToNo()">
+                            <input type="radio" name="red-alert-all" id="red-alert-all-none" value="None">
+                            <label for="red-alert-all-none">
+                                None
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Scalp
+                        </td>
+                        <td onclick="RedAlertConsetClickFor('red-alert-scalp-yes')">
+                            <input type="radio" class="red-alert-consent" id="red-alert-scalp-yes"
+                                name="red-alert-scalp" value="Yes" checked>
+                            <label for="red-alert-scalp-yes">
+                                Yes
+                            </label>
+                        </td>
+                        <td onclick="RedAlertConsetClickFor('red-alert-scalp-no')">
+                            <input type="radio" class="red-alert-consent" id="red-alert-scalp-no" name="red-alert-scalp"
+                                value="No">
+                            <label for="red-alert-scalp-no">
+                                No
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            pecs
+                        </td>
+                        <td onclick="RedAlertConsetClickFor('red-alert-pecs-yes')">
+                            <input type="radio" class="red-alert-consent" id="red-alert-pecs-yes" name="red-alert-pecs"
+                                value="Yes" checked>
+                            <label for="red-alert-pecs-yes">
+                                Yes
+                            </label>
+                        </td>
+                        <td onclick="RedAlertConsetClickFor('red-alert-pecs-no')">
+                            <input type="radio" class="red-alert-consent" id="red-alert-pecs-no" name="red-alert-pecs"
+                                value="No">
+                            <label for="red-alert-pecs-no">
+                                No
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            abs
+                        </td>
+                        <td onclick="RedAlertConsetClickFor('red-alert-abs-yes')">
+                            <input type="radio" class="red-alert-consent" id="red-alert-abs-yes" name="red-alert-abs"
+                                value="Yes" checked>
+                            <label for="red-alert-abs-yes">
+                                Yes
+                            </label>
+                        </td>
+                        <td onclick="RedAlertConsetClickFor('red-alert-abs-no')">
+                            <input type="radio" class="red-alert-consent" id="red-alert-abs-no" name="red-alert-abs"
+                                value="No">
+                            <label for="red-alert-abs-no">
+                                No
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            glutes
+                        </td>
+                        <td onclick="RedAlertConsetClickFor('red-alert-glutes-yes')">
+                            <input type="radio" class="red-alert-consent" id="red-alert-glutes-yes"
+                                name="red-alert-glutes" value="Yes" checked>
+                            <label for="red-alert-glutes-yes">
+                                Yes
+                            </label>
+                        </td>
+                        <td onclick="RedAlertConsetClickFor('red-alert-glutes-no')">
+                            <input type="radio" class="red-alert-consent" id="red-alert-glutes-no"
+                                name="red-alert-glutes" value="No">
+                            <label for="red-alert-glutes-no">
+                                No
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            feet
+                        </td>
+                        <td onclick="RedAlertConsetClickFor('red-alert-feet-yes')">
+                            <input type="radio" class="red-alert-consent" id="red-alert-feet-yes" name="red-alert-feet"
+                                value="Yes" checked>
+                            <label for="red-alert-feet-yes">
+                                Yes
+                            </label>
+                        </td>
+                        <td onclick="RedAlertConsetClickFor('red-alert-feet-no')">
+                            <input type="radio" class="red-alert-consent" id="red-alert-feet-no" name="red-alert-feet"
+                                value="No">
+                            <label for="red-alert-feet-no">
+                                No
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>Oncology Intake</label><br>
+                <input type="radio" class="red-alert-oncology" name="red-alert-oncology" value="Yes">
+                <span>Yes</span><br>
+                <input type="radio" class="red-alert-oncology" name="red-alert-oncology" value="No" checked>
+                <span>No</span><br>
+                <label for="red-alert-oncology-intake-date">Date</label>
+                <input type="date" id="red-alert-oncology-intake-date" class="input-field">
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey full-width padding-10 margin-1 roudned">
+                <div>
+                    <button onclick="GenerateRedAlerts()">Generate</button>
+                    <button onclick="Clear()">Clear</button>
+                </div>
+                <textarea id="red-alert-output" style="width: 100%; height: 200px;"></textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("red-alert-date").valueAsDate = new Date();
+        document.getElementById("red-alert-oncology-intake-date").valueAsDate = new Date();
+        function RedAlertConsentFlipToYes() {
+            var scalp = document.querySelector("#red-alert-all-all").checked = true;
+            var scalp = document.querySelector("#red-alert-scalp-yes").checked = true;
+            var scalp = document.querySelector("#red-alert-pecs-yes").checked = true;
+            var scalp = document.querySelector("#red-alert-abs-yes").checked = true;
+            var scalp = document.querySelector("#red-alert-glutes-yes").checked = true;
+            var scalp = document.querySelector("#red-alert-feet-yes").checked = true;
+        }
+        function RedAlertConsentFlipToNo() {
+            var scalp = document.querySelector("#red-alert-all-none").checked = true;
+            var scalp = document.querySelector("#red-alert-scalp-no").checked = true;
+            var scalp = document.querySelector("#red-alert-pecs-no").checked = true;
+            var scalp = document.querySelector("#red-alert-abs-no").checked = true;
+            var scalp = document.querySelector("#red-alert-glutes-no").checked = true;
+            var scalp = document.querySelector("#red-alert-feet-no").checked = true;
+        }
+        function RedAlertConsetClickFor(e) {
+            var scalp = document.querySelector(`#${e}`).checked = true;
+        }
+        function GenerateRedAlerts() {
+            //*****************
+            //CIF
+            //*****************
+            var redAlertDate = document.getElementById("red-alert-date").valueAsDate;
+            var redAlertMonth = `${(redAlertDate.getUTCMonth() + 1)}`.padStart(2, "0");
+            var outputString = `CIF ${redAlertMonth}/${redAlertDate.getUTCDate()}/${redAlertDate.getUTCFullYear()}\n`;
+
+            //*****************
+            //Pregnant
+            //*****************
+            var Pregnant = document.querySelector('input[name="red-alert-pregnant"]:checked')?.value;
+            if (Pregnant != null && Pregnant != undefined && Pregnant != "" && Pregnant != "No") {
+                outputString += `Pregnant: ${Pregnant}\n`;
+            }
+            //*****************
+            //Active Cancer
+            //*****************
+            var oncologyIntake = document.querySelector('input[name="red-alert-oncology"]:checked')?.value;
+            var oncologyIntakeDate = document.getElementById("red-alert-oncology-intake-date").valueAsDate;
+            if (oncologyIntake != null && oncologyIntake != undefined && oncologyIntake != "" && oncologyIntake != "No") {
+                var oncologyIntakeMonth = `${(oncologyIntakeDate.getUTCMonth() + 1)}`.padStart(2, "0");
+                outputString += `Active Cancer: ${oncologyIntakeMonth}/${oncologyIntakeDate.getUTCDate()}/${oncologyIntakeDate.getUTCFullYear()}\n`;
+            }
+            //*****************
+            //Allergies
+            //*****************
+            var allergies = document.getElementById("allergies").value;
+            if (typeof allergies === "string" && allergies.length > 0) {
+                outputString += `Allergies: ${allergies}\n`;
+            }
+            //*****************
+            //Yes
+            //*****************
+            var yesOutput = "";
+            var noOutput = "";
+
+            var scalp = document.querySelector('input[name="red-alert-scalp"]:checked')?.value;
+            var pecs = document.querySelector('input[name="red-alert-pecs"]:checked')?.value;
+            var abs = document.querySelector('input[name="red-alert-abs"]:checked')?.value;
+            var glutes = document.querySelector('input[name="red-alert-glutes"]:checked')?.value;
+            var feet = document.querySelector('input[name="red-alert-feet"]:checked')?.value;
+
+            if (scalp == "Yes" && pecs == "Yes" && abs == "Yes" && glutes == "Yes" && feet == "Yes") {
+                outputString += `Yes: All\n`;
+            }
+            else if (scalp == "No" && pecs == "No" && abs == "No" && glutes == "No" && feet == "No") {
+                outputString += `No: All\n`;
+            }
+            else {
+                outputString += `Yes:`;
+                if (scalp == "Yes") { outputString += `Scalp ` } else { outputString += ``; }
+                if (pecs == "Yes") { outputString += `Pecs ` } else { outputString += ``; }
+                if (abs == "Yes") { outputString += `Abs ` } else { outputString += ``; }
+                if (glutes == "Yes") { outputString += `Glutes ` } else { outputString += ``; }
+                if (feet == "Yes") { outputString += `Feet ` } else { outputString += ``; }
+                outputString += `\n`;
+
+                outputString += `No:`;
+                if (scalp == "No") { outputString += `Scalp ` } else { outputString += ``; }
+                if (pecs == "No") { outputString += `Pecs ` } else { outputString += ``; }
+                if (abs == "No") { outputString += `Abs ` } else { outputString += ``; }
+                if (glutes == "No") { outputString += `Glutes ` } else { outputString += ``; }
+                if (feet == "No") { outputString += `Feet ` } else { outputString += ``; }
+                outputString += `\n`;
+            }
+
+            //*****************
+            //Occupation
+            //*****************
+            var occupation = document.getElementById("red-alert-occupation").value;
+            if (typeof occupation === "string" && occupation.length !== 0) {
+                outputString += `Occupation: ${occupation}\n`;
+            }
+            //*****************
+            //HH
+            //*****************
+            var healthHistoryElements = document.getElementsByClassName("hh");
+            var hhOutput = "";
+            var first = true;
+            for (let index = 0; index < healthHistoryElements.length; index++) {
+                const element = healthHistoryElements.item(index);
+                var name = element.getAttribute("name");
+                if (element.checked) {
+                    if (first) {
+                        first = false;
+                        hhOutput += `${element.getAttribute("name")}`;
+                    } else {
+                        hhOutput += `, ${element.getAttribute("name")}`;
+                    }
+                }
+            }
+            if (typeof hhOutput === "string" && hhOutput.length > 0) {
+                outputString += `HH: ${hhOutput}\n`;
+            }
+
+            var numbnessOutput = document.getElementById("hh-numbness").value;
+            if (typeof numbnessOutput === "string" && numbnessOutput.length > 0) {
+                outputString += `Numbness/Tingling: ${numbnessOutput}\n`;
+            }
+
+
+            var medicalConditionsOutput = document.getElementById("medical-conditions").value;
+            if (typeof medicalConditionsOutput === "string" && medicalConditionsOutput.length > 0) {
+                outputString += `Medical Conditions: ${medicalConditionsOutput}\n`;
+            }
+            var medicationsOutput = document.getElementById("medications").value;
+            if (typeof medicationsOutput === "string" && medicationsOutput.length > 0) {
+                outputString += `Medications: ${medicationsOutput}\n`;
+            }
+            var injuriesOutput = document.getElementById("injuries").value;
+            if (typeof injuriesOutput === "string" && injuriesOutput.length > 0) {
+                outputString += `Injuries: ${injuriesOutput}\n`;
+            }
+
+            document.getElementById("red-alert-output").value = outputString;
+        }
+        function Clear() {
+            location.reload(true);
+        }
+    </script>
+</body>
+
+</html>

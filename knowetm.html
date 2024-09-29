@@ -1,0 +1,354 @@
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .flex {
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .padding-10 {
+            padding: 2%;
+        }
+
+        .full-width {
+            width: 95%;
+        }
+
+        .col-2 {
+            width: 50%;
+        }
+
+        .col-4 {
+            width: 25%;
+        }
+
+        .margin-1 {
+            margin-top: 1px;
+        }
+
+        .bg-grey {
+            background-color: #CCC;
+        }
+
+        .bg-red {
+            background-color: #F88;
+        }
+
+        .roudned {
+            border-style: solid;
+            border-width: 2px;
+            border-color: #000;
+            border-radius: 5px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        #container {
+            width: 100%;
+            display: flex;
+        }
+
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="knowetm">
+        <h1>KNOWETM Generator</h1>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>Date</label>
+                <input type="date" id="knowetm-date" class="input-field">
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>Name:</label>
+                <input id="client-name" class="input-field">
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>Occupation</label>
+                <input id="knowetm-occupation" class="input-field">
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>How did you hear about us?</label><br>
+                <input type="checkbox" class="how-heard" name="Drove By"> <span>Drove By</span><br>
+                <input type="checkbox" class="how-heard" name="Member Referral"> <span>Member Referral</span><br>
+                <input type="checkbox" class="how-heard" name="Advetisment"> <span>Advetisment</span><br>
+                <input type="checkbox" class="how-heard" name="Other"> <span>Other</span><br>
+                <label>Other:</label>
+                <input id="knowetm-how-other-detail" class="input-field">
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>Is this your first massage?</label><br>
+                <input type="checkbox" class="first-massage" name="Yes"> <span>Yes</span><br>
+                <input type="checkbox" class="first-massage" name="No"> <span>No</span><br>
+                <label>If No where do you usually go?:</label>
+                <input id="first-massage-detail" class="input-field">
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>How often do you get massages?</label><br>
+                <input type="checkbox" class="massage-frequency" name="Weekly"> <span>Weekly</span><br>
+                <input type="checkbox" class="massage-frequency" name="Every Other Week"> <span>Every Other
+                    Week</span><br>
+                <input type="checkbox" class="massage-frequency" name="Monthly"> <span>Monthly</span><br>
+                <input type="checkbox" class="massage-frequency" name="Quarterly"> <span>Quarterly</span><br>
+                <input type="checkbox" class="massage-frequency" name="Annually"> <span>Annually</span><br>
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>What's your reason for coming in today?</label><br>
+                <input type="checkbox" class="reason" name="Stress"> <span>Stress</span><br>
+                <input type="checkbox" class="reason" name="Pain"> <span>Pain</span><br>
+                <input type="checkbox" class="reason" name="Headaches"> <span>Headaches</span><br>
+                <input type="checkbox" class="reason" name="Relaxation"> <span>Relaxation</span><br>
+                <input type="checkbox" class="reason" name="Insomnia"> <span>Insomnia</span><br>
+                <input type="checkbox" class="reason" name="Prenatal"> <span>Prenatal</span><br>
+                <input type="checkbox" class="reason" name="Sports Injury"> <span>Sports Injury</span><br>
+                <input type="checkbox" class="reason" name="Prevention"> <span>Prevention</span><br>
+                <input type="checkbox" class="reason" name="Muscle Knots"> <span>Muscle Knots</span><br>
+                <label>Other:</label>
+                <input id="knowetm-reason-other-detail" class="input-field">
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>What activities contribute most for your pain</label>
+                <input id="activities" class="input-field">
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>On a scale of 1-10 what is your current level of pain?</label><br>
+                <input type="radio" class="pain-level" name="pain-level" value="null"> <span>N/A</span>
+                <input type="radio" class="pain-level" name="pain-level" value="1"> <span>1 (least)</span>
+                <input type="radio" class="pain-level" name="pain-level" value="2"> <span>2</span>
+                <input type="radio" class="pain-level" name="pain-level" value="3"> <span>3</spa>
+                    <input type="radio" class="pain-level" name="pain-level" value="4"> <span>4</span>
+                    <input type="radio" class="pain-level" name="pain-level" value="5"> <span>5</span>
+                    <input type="radio" class="pain-level" name="pain-level" value="6"> <span>6</span>
+                    <input type="radio" class="pain-level" name="pain-level" value="7"> <span>7</spa>
+                        <input type="radio" class="pain-level" name="pain-level" value="8"> <span>8</span>
+                        <input type="radio" class="pain-level" name="pain-level" value="9"> <span>9</span>
+                        <input type="radio" class="pain-level" name="pain-level" value="10"> <span>10 (most)</span>
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>On a scale of 1-10 what is your current level of stress?</label><br>
+                <input type="radio" class="stress-level" name="stress-level" value="null"> <span>N/A</span>
+                <input type="radio" class="stress-level" name="stress-level" value="1"> <span>1 (least)</span>
+                <input type="radio" class="stress-level" name="stress-level" value="2"> <span>2</span>
+                <input type="radio" class="stress-level" name="stress-level" value="3"> <span>3</spa>
+                    <input type="radio" class="stress-level" name="stress-level" value="4"> <span>4</span>
+                    <input type="radio" class="stress-level" name="stress-level" value="5"> <span>5</span>
+                    <input type="radio" class="stress-level" name="stress-level" value="6"> <span>6</span>
+                    <input type="radio" class="stress-level" name="stress-level" value="7"> <span>7</spa>
+                        <input type="radio" class="stress-level" name="stress-level" value="8"> <span>8</span>
+                        <input type="radio" class="stress-level" name="stress-level" value="9"> <span>9</span>
+                        <input type="radio" class="stress-level" name="stress-level" value="10"> <span>10 (most)</span>
+            </div>
+        </div>
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>What does your pain and stress prevent you from doing?</label>
+                <input id="prevented-activities" class="input-field">
+            </div>
+        </div>
+
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>How do you typically address your pain and stress?</label>
+                <input id="mitigation" class="input-field">
+            </div>
+        </div>
+
+        <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <div>
+                    <button onclick="GenerateKNOWETM()">Generate</button>
+                    <button onclick="Clear()">Clear</button>
+                </div>
+                <textarea id="knowetm-output" style="width: 100%; height: 200px;"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <script>
+
+        document.getElementById("knowetm-date").valueAsDate = new Date();
+        function GenerateKNOWETM() {
+            //*****************
+            //CIF
+            //*****************
+            var knowetmDate = document.getElementById("knowetm-date").valueAsDate;
+
+            var knowetmDateMonth = `${(knowetmDate.getUTCMonth() + 1)}`.padStart(2, "0");
+            var knowetmDateDay = `${knowetmDate.getUTCDate()}`.padStart(2, "0");
+            var knowetmDateYear = `${knowetmDate.getUTCFullYear()}`;
+            var outputString = `Completed Date:  ${knowetmDateMonth}/${knowetmDateDay}/${knowetmDateYear}\n`;
+            console.log();
+            //*****************
+            //name
+            //*****************
+            var clientName = document.getElementById("client-name");
+            if (clientName.value != "") {
+                outputString += `Name: ${document.getElementById("client-name").value}\n`;
+            }
+
+            //*****************
+            //occupation
+            //*****************
+            var knowetmOccupation = document.getElementById("knowetm-occupation");
+            if (typeof knowetmOccupation === "string" && knowetmOccupation.length === 0) {
+                outputString += `Occupation: ${document.getElementById("knowetm-occupation").value}\n`;
+            }
+
+            //*****************
+            //how did you hear about us
+            //*****************
+            var howHeard = document.getElementsByClassName("how-heard");
+            for (let index = 0; index < howHeard.length; index++) {
+                const element = howHeard.item(index);
+                var name = element.getAttribute("name");
+                if (element.checked) {
+                    outputString += `How did you hear about us: ${name} ${document.getElementById("knowetm-how-other-detail").value}\n`;
+                }
+            }
+
+
+            //*****************
+            //first massage?
+            //*****************
+
+            var firstMassage = document.getElementsByClassName("first-massage");
+            var firstMassageDetail = document.getElementById("first-massage-detail");
+            for (let index = 0; index < firstMassage.length; index++) {
+                const element = firstMassage.item(index);
+                var name = element.getAttribute("name");
+                if (element.checked) {
+                    if (firstMassageDetail.value != "") {
+                        outputString += `First massage?: ${name}, Typicallys goes to: ${document.getElementById("first-massage-detail").value}\n`;
+                    } else {
+                        outputString += `First massage?: ${name}\n`;
+                    }
+                }
+            }
+
+            //*****************
+            //frequency
+            //*****************
+
+            var massageFrequency = document.getElementsByClassName("massage-frequency");
+            for (let index = 0; index < massageFrequency.length; index++) {
+                const element = massageFrequency.item(index);
+                var name = element.getAttribute("name");
+                if (element.checked) {
+                    outputString += `Desired Frequency: ${name}\n`;
+                }
+            }
+
+            //*****************
+            //Reasons
+            //*****************
+            var knowetmReasons = "";
+            var reasons = document.getElementsByClassName("reason");
+            var firstReason = true;
+            for (let index = 0; index < reasons.length; index++) {
+                const element = reasons.item(index);
+                var name = element.getAttribute("name");
+                if (element.checked) {
+                    if (firstReason) {
+                        firstReason = false;
+                        knowetmReasons += `${element.getAttribute("name")}`;
+                    } else {
+                        knowetmReasons += `, ${element.getAttribute("name")}`;
+                    }
+                }
+            }
+            if (knowetmReasons != "") {
+                outputString += `Reasons for coming in: ${knowetmReasons}\n`;
+            }
+
+            var reasonStringOutput = document.getElementById("knowetm-reason-other-detail").value;
+            if (typeof reasonStringOutput === "string" && reasonStringOutput.length > 0) {
+                outputString += `Other Reason For Coming in: ${reasonStringOutput}`;
+            }
+
+            //*****************
+            //activities
+            //*****************
+            var knowetmActivities = document.getElementById("activities");
+            if (knowetmActivities.value != "") {
+                outputString += `Activities that contribute to pain/stress: ${knowetmActivities.value}\n`;
+            }
+            //*****************
+            //level
+            //*****************
+            var painLevel = document.querySelector('input[name="pain-level"]:checked');
+            if (painLevel != null && painLevel.value != "null") {
+                outputString += `Pain Level: ${painLevel.value}/${document.getElementsByName("pain-level").length}\n`;
+            }
+            var stressLevel = document.querySelector('input[name="stress-level"]:checked');
+            if (stressLevel != null && stressLevel.value != "null") {
+                outputString += `stress Level: ${stressLevel.value}/${document.getElementsByName("stress-level").length}\n`;
+            }
+            //*****************
+            //activities
+            //*****************
+            var preventedActivities = document.getElementById("prevented-activities");
+            if (preventedActivities.value != "") {
+                outputString += `Activities prevented by pain/stress: ${preventedActivities.value}\n`;
+            }
+            //*****************
+            //prevention
+            //*****************
+            var mitigation = document.getElementById("mitigation");
+            if (mitigation.value != "") {
+                outputString += `How they deal with the pain/stress: ${mitigation.value}\n`;
+            }
+
+
+            document.getElementById("knowetm-output").value = outputString;
+        }
+
+
+        function Clear() {
+            location.reload(true);
+        }
+    </script>
+</body>
+
+</html>
