@@ -7,6 +7,10 @@
             margin: 0px;
         }
 
+        body{
+            max-width: 800px;
+            margin: 50px auto;
+        }
         .flex {
             display: flex;
             flex-flow: column wrap;
@@ -82,12 +86,6 @@
             <div class="bg-grey padding-10 margin-1 roudned">
                 <label>Date</label>
                 <input type="date" id="knowetm-date" class="input-field">
-            </div>
-        </div>
-        <div>
-            <div class="bg-grey padding-10 margin-1 roudned">
-                <label>Name:</label>
-                <input id="client-name" class="input-field">
             </div>
         </div>
         <div>
@@ -219,14 +217,6 @@
             var knowetmDateDay = `${knowetmDate.getUTCDate()}`.padStart(2, "0");
             var knowetmDateYear = `${knowetmDate.getUTCFullYear()}`;
             var outputString = `Completed Date:  ${knowetmDateMonth}/${knowetmDateDay}/${knowetmDateYear}\n`;
-            console.log();
-            //*****************
-            //name
-            //*****************
-            var clientName = document.getElementById("client-name");
-            if (clientName.value != "") {
-                outputString += `Name: ${document.getElementById("client-name").value}\n`;
-            }
 
             //*****************
             //occupation
