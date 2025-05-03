@@ -121,6 +121,16 @@
             </div>
         </div>
         <div>
+            <div class="bg-grey padding-10 margin-1 roudned">
+                <label>Skin Treatment:</label><br>
+                <input type="radio" class="red-alert-skinTreatment" name="red-alert-skinTreatment" value="Yes">
+                <span>Yes</span><br>
+                <input type="radio" class="red-alert-skinTreatment" name="red-alert-skinTreatment" value="No"> 
+                <span>No</span>
+                <br>
+            </div>
+        </div>
+        <div>
             <div class="bg-grey full-width padding-10 margin-1 roudned">
                 <label>Other Medical Conditions:</label><br>
                 <textarea id="medical-conditions" style="width: 300px; height: 50px;"></textarea>
@@ -317,6 +327,21 @@
         function RedAlertConsetClickFor(e) {
             var scalp = document.querySelector(`#${e}`).checked = true;
         }
+
+        function GenerateRedAlertsForMT() {
+        }
+        
+        function GenerateRedAlertsForST() {
+            //*****************
+            //Skin Treatment
+            //*****************
+            let skinTreatment = document.querySelector('input[name="red-alert-skinTreatment"]:checked')?.value;
+
+            if (skinTreatment != null && skinTreatment != undefined && skinTreatment != "" && skinTreatment != "No") {
+                outputString += `ST\n`;
+            }
+        }
+
         function GenerateRedAlerts() {
             //*****************
             //CIF
@@ -325,6 +350,7 @@
             var redAlertMonth = `${(redAlertDate.getUTCMonth() + 1)}`.padStart(2, "0");
             var outputString = `CIF ${redAlertMonth}/${redAlertDate.getUTCDate()}/${redAlertDate.getUTCFullYear()}\n\n`;
 
+            
             //*****************
             //Occupation
             //*****************
