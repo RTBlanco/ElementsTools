@@ -326,6 +326,14 @@
             var outputString = `CIF ${redAlertMonth}/${redAlertDate.getUTCDate()}/${redAlertDate.getUTCFullYear()}\n\n`;
 
             //*****************
+            //Occupation
+            //*****************
+            var occupation = document.getElementById("red-alert-occupation").value;
+            if (typeof occupation === "string" && occupation.length !== 0) {
+                outputString += `Occupation: ${occupation}\n\n`;
+            }
+
+            //*****************
             //Pregnant
             //*****************
             var Pregnant = document.querySelector('input[name="red-alert-pregnant"]:checked')?.value;
@@ -384,13 +392,6 @@
                 outputString += `\n`;
             }
 
-            //*****************
-            //Occupation
-            //*****************
-            var occupation = document.getElementById("red-alert-occupation").value;
-            if (typeof occupation === "string" && occupation.length !== 0) {
-                outputString += `Occupation: ${occupation}\n`;
-            }
             //*****************
             //HH
             //*****************
