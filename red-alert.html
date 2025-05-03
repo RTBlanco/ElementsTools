@@ -323,7 +323,7 @@
             //*****************
             var redAlertDate = document.getElementById("red-alert-date").valueAsDate;
             var redAlertMonth = `${(redAlertDate.getUTCMonth() + 1)}`.padStart(2, "0");
-            var outputString = `CIF ${redAlertMonth}/${redAlertDate.getUTCDate()}/${redAlertDate.getUTCFullYear()}\n`;
+            var outputString = `CIF ${redAlertMonth}/${redAlertDate.getUTCDate()}/${redAlertDate.getUTCFullYear()}\n\n`;
 
             //*****************
             //Pregnant
@@ -361,13 +361,13 @@
             var feet = document.querySelector('input[name="red-alert-feet"]:checked')?.value;
 
             if (scalp == "Yes" && pecs == "Yes" && abs == "Yes" && glutes == "Yes" && feet == "Yes") {
-                outputString += `Yes: All\n`;
+                outputString += `Consent: Yes All\n`;
             }
             else if (scalp == "No" && pecs == "No" && abs == "No" && glutes == "No" && feet == "No") {
-                outputString += `No: All\n`;
+                outputString += `Consent: No All\n`;
             }
             else {
-                outputString += `Yes:`;
+                outputString += `Consent:`;
                 if (scalp == "Yes") { outputString += `Scalp ` } else { outputString += ``; }
                 if (pecs == "Yes") { outputString += `Pecs ` } else { outputString += ``; }
                 if (abs == "Yes") { outputString += `Abs ` } else { outputString += ``; }
@@ -375,7 +375,7 @@
                 if (feet == "Yes") { outputString += `Feet ` } else { outputString += ``; }
                 outputString += `\n`;
 
-                outputString += `No:`;
+                outputString += `No Consent:`;
                 if (scalp == "No") { outputString += `Scalp ` } else { outputString += ``; }
                 if (pecs == "No") { outputString += `Pecs ` } else { outputString += ``; }
                 if (abs == "No") { outputString += `Abs ` } else { outputString += ``; }
