@@ -442,24 +442,26 @@
             //*****************
             //Skin Treatment
             //*****************
-            outputString += `ST\n`;
-
-            let stinputsCheckboxes = document.querySelectorAll("#st-med-inputs input[type=checkbox]");
-            console.log(stinputsCheckboxes);
-            if (stinputsCheckboxes.length > 0) {
-                stinputsCheckboxes.forEach(input => {
-                    console.log(input.name,input.checked );
-                    input.addEventListener("click", () => {
-                        if (input.checked) {
-                            outputString += `${input.name} `;
-                        //} else {
-                          //  outputString = outputString.replace(`${input.name} `, "");
+            let skinTreatment = document.querySelector('input[name="red-alert-skinTreatment"]:checked')?.value;
+            if (skinTreatment != null && skinTreatment != undefined && skinTreatment != "" && skinTreatment != "No") {
+                outputString += `ST\n`;
+    
+                let stInputsCheckboxes = document.querySelectorAll("#st-med-inputs input[type=checkbox]");
+                let filteredStInputsCheckboxes = Array.from(stInputsCheckboxes).filter(input => input.checked);
+                if (filteredStInputsCheckboxes.length > 0) {
+                    outputString += `Meds: `;
+                    filteredStInputsCheckboxes.forEach((input, index) => {
+                        if (index === 0) {
+                            outputString += `${input.name}`;
+                        } else {
+                            outputString += `, ${input.name}`;
                         }
                     });
-                });
+                    outputString += `\n`;
+                }
             }
 
-            console.log(outputString)
+
 
             //*****************
             //Occupation
