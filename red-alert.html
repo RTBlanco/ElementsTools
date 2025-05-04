@@ -189,22 +189,22 @@
                     <label>Skin Description:</label><br>
                     <div id="st-desc-inputs">
                         <span>
-                            <input type="checkbox" name="Oily-All-over"> Oily All-over
+                            <input type="checkbox" name="Oily All-over"> Oily All-over
                         </span>
                         <span>
-                            <input type="checkbox" name="Dry-All-over"> Dry All-over
+                            <input type="checkbox" name="Dry All-over"> Dry All-over
                         </span>
                         <span>
-                            <input type="checkbox" name="Oily-T-zone"> T-zone
+                            <input type="checkbox" name="Oily T-zone"> T-zone
                         </span>
                         <span>
                             <input type="checkbox" name="Blackheads"> Blackheads
                         </span>
                         <span>
-                            <input type="checkbox" name="Prone-to-breakouts"> Prone to breakouts
+                            <input type="checkbox" name="Prone to breakouts"> Prone to breakouts
                         </span>
                         <span>
-                            <input type="checkbox" name="Dry-Patches"> Patches
+                            <input type="checkbox" name="Dry Patches"> Patches
                         </span>
                         <span>
                             <input type="checkbox" name="Rough/flaky"> Rough/flaky      
@@ -511,8 +511,12 @@
                 if (skinRegimen.length > 0) {
                     outputString += `Skin Regimen: ${skinRegimen}\n`;
                 }
-                
+
+
+                outputString += `\n`
             }
+
+            outputString += `MT\n`;
 
             //*****************
             //Pregnant
@@ -545,10 +549,10 @@
             var feet = document.querySelector('input[name="red-alert-feet"]:checked')?.value;
 
             if (scalp == "Yes" && pecs == "Yes" && abs == "Yes" && glutes == "Yes" && feet == "Yes") {
-                outputString += `Consent: Yes All\n`;
+                outputString += `Consent: Yes to All\n`;
             }
             else if (scalp == "No" && pecs == "No" && abs == "No" && glutes == "No" && feet == "No") {
-                outputString += `Consent: No All\n`;
+                outputString += `Consent: No to All\n`;
             }
             else {
                 outputString += `Consent:`;
