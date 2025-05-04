@@ -75,6 +75,19 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        .st-inputs {
+            display: grid;
+            column-gap: 50px;
+            row-gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            margin: 10px 0px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #000;
+            border-radius: 5px;
+        }
+        
     </style>
 </head>
 
@@ -122,12 +135,56 @@
         </div>
         <div>
             <div class="bg-grey padding-10 margin-1 roudned">
-                <label>Skin Treatment:</label><br>
-                <input type="radio" class="red-alert-skinTreatment" name="red-alert-skinTreatment" value="Yes">
-                <span>Yes</span><br>
-                <input type="radio" class="red-alert-skinTreatment" name="red-alert-skinTreatment" value="No"> 
-                <span>No</span>
-                <br>
+                <div class="skin-treatment-main">
+                    <label>Skin Treatment:</label><br>
+                    <input type="radio" class="red-alert-skinTreatment" name="red-alert-skinTreatment" value="Yes">
+                    <span>Yes</span><br>
+                    <input type="radio" class="red-alert-skinTreatment" name="red-alert-skinTreatment" value="No"> 
+                    <span>No</span>
+                    <br>
+                </div>
+                <div class="skin-treatment-section">
+                    <br>
+                    <label>Skin Medications:</label><br>
+                    <div class="st-inputs">
+                        <span>
+                            <input type="checkbox" name="N/A"> N/A
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Accutane"> Accutane®
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Renova"> Renova®
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Differin"> Differin®
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Tetracycline"> Tetracycline
+                        </span> 
+                        <span>
+                            <input type="checkbox" name="Tretinoin/Retin-A"> Tretinoin/Retin-A®
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Birth control pills"> Birth control pills
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Prednisone"> Prednisone
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Coumadin"> Coumadin
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Vicodin"> Vicodin®
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Premarin (Estrogen)"> Premarin (Estrogen)
+                        </span>
+                    </div>
+                    <br>
+                    <label>Other Medications:</label><br>
+                    <textarea id="other-medications" style="width: 300px; height: 50px;"></textarea>
+                </div>
             </div>
         </div>
         <div>
