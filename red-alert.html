@@ -76,7 +76,7 @@
             background-color: #f2f2f2;
         }
 
-        .st-inputs {
+        #st-desc-inputs, #st-med-inputs {
             display: grid;
             column-gap: 50px;
             row-gap: 10px;
@@ -143,10 +143,10 @@
                     <span>No</span>
                     <br>
                 </div>
-                <div class="skin-treatment-section">
+                <div id="skin-treatment-section" hidden>
                     <br>
                     <label>Skin Medications:</label><br>
-                    <div class="st-inputs">
+                    <div id="st-med-inputs">
                         <span>
                             <input type="checkbox" name="N/A"> N/A
                         </span>
@@ -184,6 +184,35 @@
                     <br>
                     <label>Other Medications:</label><br>
                     <textarea id="other-medications" style="width: 300px; height: 50px;"></textarea>
+                    <br>
+                    <hr>
+                    <label>Skin Description:</label><br>
+                    <div id="st-desc-inputs">
+                        <span>
+                            <input type="checkbox" name="Oily-All-over"> Oily All-over
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Dry-All-over"> Dry All-over
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Oily-T-zone"> T-zone
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Blackheads"> Blackheads
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Prone-to-breakouts"> Prone to breakouts
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Dry-Patches"> Patches
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Rough/flaky"> Rough/flaky      
+                        </span>
+                        <span>
+                            <input type="checkbox" name="Itchy/tight"> Itchy/tight
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -388,16 +417,18 @@
         function GenerateRedAlertsForMT() {
         }
         
-        function GenerateRedAlertsForST() {
-            //*****************
-            //Skin Treatment
-            //*****************
-            let skinTreatment = document.querySelector('input[name="red-alert-skinTreatment"]:checked')?.value;
-
-            if (skinTreatment != null && skinTreatment != undefined && skinTreatment != "" && skinTreatment != "No") {
-                outputString += `ST\n`;
-            }
+        function ShowST() {
+            document.querySelectorAll('input[name="red-alert-skinTreatment"]').forEach(input => {
+                input.addEventListener("click", () => {
+                    if (input.value !== "Yes") {
+                        document.getElementById("skin-treatment-section").hidden = true;
+                    } else {
+                        document.getElementById("skin-treatment-section").hidden = false;
+                    }
+                });
+            });
         }
+
 
         function GenerateRedAlerts() {
             //*****************
@@ -407,7 +438,29 @@
             var redAlertMonth = `${(redAlertDate.getUTCMonth() + 1)}`.padStart(2, "0");
             var outputString = `CIF ${redAlertMonth}/${redAlertDate.getUTCDate()}/${redAlertDate.getUTCFullYear()}\n\n`;
 
-            
+
+            //*****************
+            //Skin Treatment
+            //*****************
+            outputString += `ST\n`;
+
+            let stinputsCheckboxes = document.querySelectorAll("#st-med-inputs input[type=checkbox]");
+            console.log(stinputsCheckboxes);
+            if (stinputsCheckboxes.length > 0) {
+                stinputsCheckboxes.forEach(input => {
+                    console.log(input.name,input.checked );
+                    input.addEventListener("click", () => {
+                        if (input.checked) {
+                            outputString += `${input.name} `;
+                        //} else {
+                          //  outputString = outputString.replace(`${input.name} `, "");
+                        }
+                    });
+                });
+            }
+
+            console.log(outputString)
+
             //*****************
             //Occupation
             //*****************
@@ -521,6 +574,8 @@
         function Clear() {
             location.reload(true);
         }
+
+        ShowST();
     </script>
 </body>
 
