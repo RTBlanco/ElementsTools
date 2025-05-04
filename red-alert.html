@@ -259,7 +259,7 @@
 
                         </td>
                         <td onclick="RedAlertConsentFlipToYes()">
-                            <input type="radio" name="red-alert-all" id="red-alert-all-all" value="All" checked>
+                            <input type="radio" name="red-alert-all" id="red-alert-all-all" value="All">
                             <label for="red-alert-all-all">
                                 All
                             </label>
@@ -278,7 +278,7 @@
                         </td>
                         <td onclick="RedAlertConsetClickFor('red-alert-pecs-yes')">
                             <input type="radio" class="red-alert-consent" id="red-alert-pecs-yes" name="red-alert-pecs"
-                                value="Yes" checked>
+                                value="Yes">
                             <label for="red-alert-pecs-yes">
                                 Yes
                             </label>
@@ -298,7 +298,7 @@
                         </td>
                         <td onclick="RedAlertConsetClickFor('red-alert-abs-yes')">
                             <input type="radio" class="red-alert-consent" id="red-alert-abs-yes" name="red-alert-abs"
-                                value="Yes" checked>
+                                value="Yes">
                             <label for="red-alert-abs-yes">
                                 Yes
                             </label>
@@ -317,7 +317,7 @@
                         </td>
                         <td onclick="RedAlertConsetClickFor('red-alert-feet-yes')">
                             <input type="radio" class="red-alert-consent" id="red-alert-feet-yes" name="red-alert-feet"
-                                value="Yes" checked>
+                                value="Yes">
                             <label for="red-alert-feet-yes">
                                 Yes
                             </label>
@@ -336,7 +336,7 @@
                         </td>
                         <td onclick="RedAlertConsetClickFor('red-alert-scalp-yes')">
                             <input type="radio" class="red-alert-consent" id="red-alert-scalp-yes"
-                                name="red-alert-scalp" value="Yes" checked>
+                                name="red-alert-scalp" value="Yes">
                             <label for="red-alert-scalp-yes">
                                 Yes
                             </label>
@@ -355,7 +355,7 @@
                         </td>
                         <td onclick="RedAlertConsetClickFor('red-alert-glutes-yes')">
                             <input type="radio" class="red-alert-consent" id="red-alert-glutes-yes"
-                                name="red-alert-glutes" value="Yes" checked>
+                                name="red-alert-glutes" value="Yes">
                             <label for="red-alert-glutes-yes">
                                 Yes
                             </label>
@@ -516,15 +516,16 @@
                 outputString += `\n`
             }
 
-            outputString += `MT\n`;
+            let mtSection = "";
 
             //*****************
             //Pregnant
             //*****************
             var Pregnant = document.querySelector('input[name="red-alert-pregnant"]:checked')?.value;
             if (Pregnant != null && Pregnant != undefined && Pregnant != "" && Pregnant != "No") {
-                outputString += `Pregnant: ${Pregnant}\n`;
+                mtSection += `Pregnant: ${Pregnant}\n`;
             }
+
             //*****************
             //Active Cancer
             //*****************
@@ -532,44 +533,40 @@
             var oncologyIntakeDate = document.getElementById("red-alert-oncology-intake-date").valueAsDate;
             if (oncologyIntake != null && oncologyIntake != undefined && oncologyIntake != "" && oncologyIntake != "No") {
                 var oncologyIntakeMonth = `${(oncologyIntakeDate.getUTCMonth() + 1)}`.padStart(2, "0");
-                outputString += `Active Cancer: ${oncologyIntakeMonth}/${oncologyIntakeDate.getUTCDate()}/${oncologyIntakeDate.getUTCFullYear()}\n`;
+                mtSection += `Active Cancer: ${oncologyIntakeMonth}/${oncologyIntakeDate.getUTCDate()}/${oncologyIntakeDate.getUTCFullYear()}\n`;
             }
-          
 
             //*****************
             //Consent
             //*****************
-            var yesOutput = "";
-            var noOutput = "";
-
             var scalp = document.querySelector('input[name="red-alert-scalp"]:checked')?.value;
             var pecs = document.querySelector('input[name="red-alert-pecs"]:checked')?.value;
             var abs = document.querySelector('input[name="red-alert-abs"]:checked')?.value;
             var glutes = document.querySelector('input[name="red-alert-glutes"]:checked')?.value;
             var feet = document.querySelector('input[name="red-alert-feet"]:checked')?.value;
 
-            if (scalp == "Yes" && pecs == "Yes" && abs == "Yes" && glutes == "Yes" && feet == "Yes") {
-                outputString += `Consent: Yes to All\n`;
-            }
-            else if (scalp == "No" && pecs == "No" && abs == "No" && glutes == "No" && feet == "No") {
-                outputString += `Consent: No to All\n`;
-            }
-            else {
-                outputString += `Consent:`;
-                if (scalp == "Yes") { outputString += `Scalp ` } else { outputString += ``; }
-                if (pecs == "Yes") { outputString += `Pecs ` } else { outputString += ``; }
-                if (abs == "Yes") { outputString += `Abs ` } else { outputString += ``; }
-                if (glutes == "Yes") { outputString += `Glutes ` } else { outputString += ``; }
-                if (feet == "Yes") { outputString += `Feet ` } else { outputString += ``; }
-                outputString += `\n`;
+            if (scalp || pecs || abs || glutes || feet) {
+                if (scalp == "Yes" && pecs == "Yes" && abs == "Yes" && glutes == "Yes" && feet == "Yes") {
+                    mtSection += `Consent: Yes to All\n`;
+                } else if (scalp == "No" && pecs == "No" && abs == "No" && glutes == "No" && feet == "No") {
+                    mtSection += `Consent: No to All\n`;
+                } else {
+                    mtSection += `Consent:`;
+                    if (scalp == "Yes") { mtSection += `Scalp `; }
+                    if (pecs == "Yes") { mtSection += `Pecs `; }
+                    if (abs == "Yes") { mtSection += `Abs `; }
+                    if (glutes == "Yes") { mtSection += `Glutes `; }
+                    if (feet == "Yes") { mtSection += `Feet `; }
+                    mtSection += `\n`;
 
-                outputString += `No Consent:`;
-                if (scalp == "No") { outputString += `Scalp ` } else { outputString += ``; }
-                if (pecs == "No") { outputString += `Pecs ` } else { outputString += ``; }
-                if (abs == "No") { outputString += `Abs ` } else { outputString += ``; }
-                if (glutes == "No") { outputString += `Glutes ` } else { outputString += ``; }
-                if (feet == "No") { outputString += `Feet ` } else { outputString += ``; }
-                outputString += `\n`;
+                    mtSection += `No Consent:`;
+                    if (scalp == "No") { mtSection += `Scalp `; }
+                    if (pecs == "No") { mtSection += `Pecs `; }
+                    if (abs == "No") { mtSection += `Abs `; }
+                    if (glutes == "No") { mtSection += `Glutes `; }
+                    if (feet == "No") { mtSection += `Feet `; }
+                    mtSection += `\n`;
+                }
             }
 
             //*****************
@@ -580,7 +577,6 @@
             var first = true;
             for (let index = 0; index < healthHistoryElements.length; index++) {
                 const element = healthHistoryElements.item(index);
-                var name = element.getAttribute("name");
                 if (element.checked) {
                     if (first) {
                         first = false;
@@ -590,27 +586,32 @@
                     }
                 }
             }
-            if (typeof hhOutput === "string" && hhOutput.length > 0) {
-                outputString += `HH: ${hhOutput}\n`;
+            if (hhOutput.length > 0) {
+                mtSection += `HH: ${hhOutput}\n`;
             }
 
             var numbnessOutput = document.getElementById("hh-numbness").value;
-            if (typeof numbnessOutput === "string" && numbnessOutput.length > 0) {
-                outputString += `Numbness/Tingling: ${numbnessOutput}\n`;
+            if (numbnessOutput.length > 0) {
+                mtSection += `Numbness/Tingling: ${numbnessOutput}\n`;
             }
-
 
             var medicalConditionsOutput = document.getElementById("medical-conditions").value;
-            if (typeof medicalConditionsOutput === "string" && medicalConditionsOutput.length > 0) {
-                outputString += `Medical Conditions: ${medicalConditionsOutput}\n`;
+            if (medicalConditionsOutput.length > 0) {
+                mtSection += `Medical Conditions: ${medicalConditionsOutput}\n`;
             }
+
             var medicationsOutput = document.getElementById("medications").value;
-            if (typeof medicationsOutput === "string" && medicationsOutput.length > 0) {
-                outputString += `Medications: ${medicationsOutput}\n`;
+            if (medicationsOutput.length > 0) {
+                mtSection += `Medications: ${medicationsOutput}\n`;
             }
+
             var injuriesOutput = document.getElementById("injuries").value;
-            if (typeof injuriesOutput === "string" && injuriesOutput.length > 0) {
-                outputString += `Injuries: ${injuriesOutput}\n`;
+            if (injuriesOutput.length > 0) {
+                mtSection += `Injuries: ${injuriesOutput}\n`;
+            }
+
+            if (mtSection.length > 0) {
+                outputString += `MT\n${mtSection}`;
             }
 
             document.getElementById("red-alert-output").value = outputString;
