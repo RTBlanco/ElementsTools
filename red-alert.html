@@ -213,6 +213,8 @@
                             <input type="checkbox" name="Itchy/tight"> Itchy/tight
                         </span>
                     </div>
+                    <label>Skin Regimen:</label><br>
+                    <textarea id="skin-regimen" style="width: 300px; height: 50px;"></textarea>
                 </div>
             </div>
         </div>
@@ -440,14 +442,38 @@
 
 
             //*****************
+            //Occupation
+            //*****************
+            var occupation = document.getElementById("red-alert-occupation").value;
+            if (typeof occupation === "string" && occupation.length !== 0) {
+                outputString += `Occupation: ${occupation}\n\n`;
+            }
+
+            //*****************
+            //Allergies
+            //*****************
+            var allergies = document.getElementById("allergies").value.trim();
+            if (typeof allergies === "string" && allergies.length > 0) {
+                if (outputString.includes("Occupation")) {
+                    const occupationSection = outputString.match(/Occupation:.*?\n\n/);
+                    if (occupationSection) {
+                        const updatedSection = occupationSection[0].replace(/\n\n/g, "\n");
+                        outputString = outputString.replace(occupationSection[0], updatedSection);
+                    }
+                }
+                outputString += `Allergies: ${allergies}\n\n`;
+            }
+
+
+            //*****************
             //Skin Treatment
             //*****************
             let skinTreatment = document.querySelector('input[name="red-alert-skinTreatment"]:checked')?.value;
             if (skinTreatment != null && skinTreatment != undefined && skinTreatment != "" && skinTreatment != "No") {
                 outputString += `ST\n`;
     
-                let stInputsCheckboxes = document.querySelectorAll("#st-med-inputs input[type=checkbox]");
-                let filteredStInputsCheckboxes = Array.from(stInputsCheckboxes).filter(input => input.checked);
+                let stInputMeds = document.querySelectorAll("#st-med-inputs input[type=checkbox]");
+                let filteredStInputsCheckboxes = Array.from(stInputMeds).filter(input => input.checked);
                 if (filteredStInputsCheckboxes.length > 0) {
                     outputString += `Meds: `;
                     filteredStInputsCheckboxes.forEach((input, index) => {
@@ -459,16 +485,33 @@
                     });
                     outputString += `\n`;
                 }
-            }
+                
+                // Check for other medications
+                let otherMedication = document.getElementById("other-medications").value;
+                if (otherMedication.length > 0) {
+                    outputString += `Other Meds: ${otherMedication}\n`;
+                }
 
+                let stInputDesc = document.querySelectorAll("#st-desc-inputs input[type=checkbox]");
+                let filteredStDescCheckboxes = Array.from(stInputDesc).filter(input => input.checked);
+                if (filteredStDescCheckboxes.length > 0) {
+                    outputString += `Skin condition: `;
+                    filteredStDescCheckboxes.forEach((input, index) => {
+                        if (index === 0) {
+                            outputString += `${input.name}`;
+                        } else {
+                            outputString += `, ${input.name}`;
+                        }
+                    });
+                    outputString += `\n`;
+                }
 
-
-            //*****************
-            //Occupation
-            //*****************
-            var occupation = document.getElementById("red-alert-occupation").value;
-            if (typeof occupation === "string" && occupation.length !== 0) {
-                outputString += `Occupation: ${occupation}\n\n`;
+                // Check for skin regimen
+                let skinRegimen = document.getElementById("skin-regimen").value;
+                if (skinRegimen.length > 0) {
+                    outputString += `Skin Regimen: ${skinRegimen}\n`;
+                }
+                
             }
 
             //*****************
@@ -487,15 +530,10 @@
                 var oncologyIntakeMonth = `${(oncologyIntakeDate.getUTCMonth() + 1)}`.padStart(2, "0");
                 outputString += `Active Cancer: ${oncologyIntakeMonth}/${oncologyIntakeDate.getUTCDate()}/${oncologyIntakeDate.getUTCFullYear()}\n`;
             }
+          
+
             //*****************
-            //Allergies
-            //*****************
-            var allergies = document.getElementById("allergies").value;
-            if (typeof allergies === "string" && allergies.length > 0) {
-                outputString += `Allergies: ${allergies}\n`;
-            }
-            //*****************
-            //Yes
+            //Consent
             //*****************
             var yesOutput = "";
             var noOutput = "";
