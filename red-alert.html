@@ -446,7 +446,7 @@
             //*****************
             var occupation = document.getElementById("red-alert-occupation").value;
             if (typeof occupation === "string" && occupation.length !== 0) {
-                outputString += `Occupation: ${occupation}\n\n`;
+            outputString += `Occupation: ${occupation}\n\n`;
             }
 
             //*****************
@@ -454,14 +454,14 @@
             //*****************
             var allergies = document.getElementById("allergies").value.trim();
             if (typeof allergies === "string" && allergies.length > 0) {
-                if (outputString.includes("Occupation")) {
-                    const occupationSection = outputString.match(/Occupation:.*?\n\n/);
-                    if (occupationSection) {
-                        const updatedSection = occupationSection[0].replace(/\n\n/g, "\n");
-                        outputString = outputString.replace(occupationSection[0], updatedSection);
-                    }
+            if (outputString.includes("Occupation")) {
+                const occupationSection = outputString.match(/Occupation:.*?\n\n/);
+                if (occupationSection) {
+                const updatedSection = occupationSection[0].replace(/\n\n/g, "\n");
+                outputString = outputString.replace(occupationSection[0], updatedSection);
                 }
-                outputString += `Allergies: ${allergies}\n\n`;
+            }
+            outputString += `Allergies: ${allergies}\n\n`;
             }
 
 
@@ -470,50 +470,50 @@
             //*****************
             let skinTreatment = document.querySelector('input[name="red-alert-skinTreatment"]:checked')?.value;
             if (skinTreatment != null && skinTreatment != undefined && skinTreatment != "" && skinTreatment != "No") {
-                outputString += `ST\n`;
-    
-                let stInputMeds = document.querySelectorAll("#st-med-inputs input[type=checkbox]");
-                let filteredStInputsCheckboxes = Array.from(stInputMeds).filter(input => input.checked);
-                if (filteredStInputsCheckboxes.length > 0) {
-                    outputString += `Meds: `;
-                    filteredStInputsCheckboxes.forEach((input, index) => {
-                        if (index === 0) {
-                            outputString += `${input.name}`;
-                        } else {
-                            outputString += `, ${input.name}`;
-                        }
-                    });
-                    outputString += `\n`;
+            outputString += `ST\n`;
+        
+            let stInputMeds = document.querySelectorAll("#st-med-inputs input[type=checkbox]");
+            let filteredStInputsCheckboxes = Array.from(stInputMeds).filter(input => input.checked);
+            if (filteredStInputsCheckboxes.length > 0) {
+                outputString += `Meds: `;
+                filteredStInputsCheckboxes.forEach((input, index) => {
+                if (index === 0) {
+                    outputString += `${input.name}`;
+                } else {
+                    outputString += `, ${input.name}`;
                 }
-                
-                // Check for other medications
-                let otherMedication = document.getElementById("other-medications").value;
-                if (otherMedication.length > 0) {
-                    outputString += `Other Meds: ${otherMedication}\n`;
+                });
+                outputString += `\n`;
+            }
+            
+            // Check for other medications
+            let otherMedication = document.getElementById("other-medications").value;
+            if (otherMedication.length > 0) {
+                outputString += `Other Meds: ${otherMedication}\n`;
+            }
+
+            let stInputDesc = document.querySelectorAll("#st-desc-inputs input[type=checkbox]");
+            let filteredStDescCheckboxes = Array.from(stInputDesc).filter(input => input.checked);
+            if (filteredStDescCheckboxes.length > 0) {
+                outputString += `Skin condition: `;
+                filteredStDescCheckboxes.forEach((input, index) => {
+                if (index === 0) {
+                    outputString += `${input.name}`;
+                } else {
+                    outputString += `, ${input.name}`;
                 }
+                });
+                outputString += `\n`;
+            }
 
-                let stInputDesc = document.querySelectorAll("#st-desc-inputs input[type=checkbox]");
-                let filteredStDescCheckboxes = Array.from(stInputDesc).filter(input => input.checked);
-                if (filteredStDescCheckboxes.length > 0) {
-                    outputString += `Skin condition: `;
-                    filteredStDescCheckboxes.forEach((input, index) => {
-                        if (index === 0) {
-                            outputString += `${input.name}`;
-                        } else {
-                            outputString += `, ${input.name}`;
-                        }
-                    });
-                    outputString += `\n`;
-                }
-
-                // Check for skin regimen
-                let skinRegimen = document.getElementById("skin-regimen").value;
-                if (skinRegimen.length > 0) {
-                    outputString += `Skin Regimen: ${skinRegimen}\n`;
-                }
+            // Check for skin regimen
+            let skinRegimen = document.getElementById("skin-regimen").value;
+            if (skinRegimen.length > 0) {
+                outputString += `Skin Regimen: ${skinRegimen}\n`;
+            }
 
 
-                outputString += `\n`
+            outputString += `\n`
             }
 
             let mtSection = "";
@@ -523,7 +523,7 @@
             //*****************
             var Pregnant = document.querySelector('input[name="red-alert-pregnant"]:checked')?.value;
             if (Pregnant != null && Pregnant != undefined && Pregnant != "" && Pregnant != "No") {
-                mtSection += `Pregnant: ${Pregnant}\n`;
+            mtSection += `Pregnant: ${Pregnant}\n`;
             }
 
             //*****************
@@ -532,8 +532,8 @@
             var oncologyIntake = document.querySelector('input[name="red-alert-oncology"]:checked')?.value;
             var oncologyIntakeDate = document.getElementById("red-alert-oncology-intake-date").valueAsDate;
             if (oncologyIntake != null && oncologyIntake != undefined && oncologyIntake != "" && oncologyIntake != "No") {
-                var oncologyIntakeMonth = `${(oncologyIntakeDate.getUTCMonth() + 1)}`.padStart(2, "0");
-                mtSection += `Active Cancer: ${oncologyIntakeMonth}/${oncologyIntakeDate.getUTCDate()}/${oncologyIntakeDate.getUTCFullYear()}\n`;
+            var oncologyIntakeMonth = `${(oncologyIntakeDate.getUTCMonth() + 1)}`.padStart(2, "0");
+            mtSection += `Active Cancer: ${oncologyIntakeMonth}/${oncologyIntakeDate.getUTCDate()}/${oncologyIntakeDate.getUTCFullYear()}\n`;
             }
 
             //*****************
@@ -546,27 +546,27 @@
             var feet = document.querySelector('input[name="red-alert-feet"]:checked')?.value;
 
             if (scalp || pecs || abs || glutes || feet) {
-                if (scalp == "Yes" && pecs == "Yes" && abs == "Yes" && glutes == "Yes" && feet == "Yes") {
-                    mtSection += `Consent: Yes to All\n`;
-                } else if (scalp == "No" && pecs == "No" && abs == "No" && glutes == "No" && feet == "No") {
-                    mtSection += `Consent: No to All\n`;
-                } else {
-                    mtSection += `Consent:`;
-                    if (scalp == "Yes") { mtSection += `Scalp `; }
-                    if (pecs == "Yes") { mtSection += `Pecs `; }
-                    if (abs == "Yes") { mtSection += `Abs `; }
-                    if (glutes == "Yes") { mtSection += `Glutes `; }
-                    if (feet == "Yes") { mtSection += `Feet `; }
-                    mtSection += `\n`;
+            if (scalp == "Yes" && pecs == "Yes" && abs == "Yes" && glutes == "Yes" && feet == "Yes") {
+                mtSection += `Consent: Yes to All\n`;
+            } else if (scalp == "No" && pecs == "No" && abs == "No" && glutes == "No" && feet == "No") {
+                mtSection += `Consent: No to All\n`;
+            } else {
+                mtSection += `Consent:`;
+                if (scalp == "Yes") { mtSection += `Scalp `; }
+                if (pecs == "Yes") { mtSection += `Pecs `; }
+                if (abs == "Yes") { mtSection += `Abs `; }
+                if (glutes == "Yes") { mtSection += `Glutes `; }
+                if (feet == "Yes") { mtSection += `Feet `; }
+                mtSection += `\n`;
 
-                    mtSection += `No Consent:`;
-                    if (scalp == "No") { mtSection += `Scalp `; }
-                    if (pecs == "No") { mtSection += `Pecs `; }
-                    if (abs == "No") { mtSection += `Abs `; }
-                    if (glutes == "No") { mtSection += `Glutes `; }
-                    if (feet == "No") { mtSection += `Feet `; }
-                    mtSection += `\n`;
-                }
+                mtSection += `No Consent:`;
+                if (scalp == "No") { mtSection += `Scalp `; }
+                if (pecs == "No") { mtSection += `Pecs `; }
+                if (abs == "No") { mtSection += `Abs `; }
+                if (glutes == "No") { mtSection += `Glutes `; }
+                if (feet == "No") { mtSection += `Feet `; }
+                mtSection += `\n`;
+            }
             }
 
             //*****************
@@ -576,42 +576,47 @@
             var hhOutput = "";
             var first = true;
             for (let index = 0; index < healthHistoryElements.length; index++) {
-                const element = healthHistoryElements.item(index);
-                if (element.checked) {
-                    if (first) {
-                        first = false;
-                        hhOutput += `${element.getAttribute("name")}`;
-                    } else {
-                        hhOutput += `, ${element.getAttribute("name")}`;
-                    }
+            const element = healthHistoryElements.item(index);
+            if (element.checked) {
+                if (first) {
+                first = false;
+                hhOutput += `${element.getAttribute("name")}`;
+                } else {
+                hhOutput += `, ${element.getAttribute("name")}`;
                 }
             }
+            }
             if (hhOutput.length > 0) {
-                mtSection += `HH: ${hhOutput}\n`;
+            mtSection += `HH: ${hhOutput}\n`;
             }
 
             var numbnessOutput = document.getElementById("hh-numbness").value;
             if (numbnessOutput.length > 0) {
-                mtSection += `Numbness/Tingling: ${numbnessOutput}\n`;
+            mtSection += `Numbness/Tingling: ${numbnessOutput}\n`;
             }
 
             var medicalConditionsOutput = document.getElementById("medical-conditions").value;
             if (medicalConditionsOutput.length > 0) {
-                mtSection += `Medical Conditions: ${medicalConditionsOutput}\n`;
+            mtSection += `Medical Conditions: ${medicalConditionsOutput}\n`;
             }
 
             var medicationsOutput = document.getElementById("medications").value;
             if (medicationsOutput.length > 0) {
-                mtSection += `Medications: ${medicationsOutput}\n`;
+            mtSection += `Medications: ${medicationsOutput}\n`;
             }
 
             var injuriesOutput = document.getElementById("injuries").value;
             if (injuriesOutput.length > 0) {
-                mtSection += `Injuries: ${injuriesOutput}\n`;
+            mtSection += `Injuries: ${injuriesOutput}\n`;
             }
 
             if (mtSection.length > 0) {
-                outputString += `MT\n${mtSection}`;
+            outputString += `MT\n${mtSection}`;
+            }
+
+            // Check if ST is in the outputString and MT is not
+            if (outputString.includes("ST") && !outputString.includes("MT")) {
+            outputString = outputString.replace("ST", "Pruduct");
             }
 
             document.getElementById("red-alert-output").value = outputString;
